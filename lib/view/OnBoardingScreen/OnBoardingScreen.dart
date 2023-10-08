@@ -30,7 +30,7 @@ class OnBoardingScreen extends StatelessWidget {
                   children: [
                     Image.asset(App_Images.CoronaVirus_logo),
                     SizedBox(height: screenHeight * 0.1),
-                    Image.asset(App_Images.onBoarding_Screen_Pic1),
+                    Image.asset( onBoardingScreenController.onboardingData[index].image),
                     SizedBox(height: screenHeight * 0.1),
                     TextHeading(
                         onBoardingScreenController.onboardingData[index].title,

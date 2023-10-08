@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 TextHeading(String TextHeading,color) {
-  return Text(
+  return 
+  Text(
     TextHeading,
     style: TextStyle(
       fontWeight: FontWeight.bold,
