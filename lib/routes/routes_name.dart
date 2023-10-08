@@ -1,5 +1,5 @@
 class RoutesName {
-  static String SplashScreen = '/';
+  static String OnBoardingScreen = '/';
   // static String Login = "/Login";
   // static String SignUp = "/SignUp";
   // static String EmailVerification = "/EmailVerification";

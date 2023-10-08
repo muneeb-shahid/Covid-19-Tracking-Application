@@ -1,12 +1,12 @@
 import 'package:covid_19_trackingapp/routes/routes_name.dart';
-import 'package:covid_19_trackingapp/view/SplashScreen/SplashScreen.dart';
+import 'package:covid_19_trackingapp/view/OnBoardingScreen/OnBoardingScreen.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
   static appRoutes() => [
         GetPage(
-          name: RoutesName.SplashScreen,
-          page: () => SplashScreen(),
+          name: RoutesName.OnBoardingScreen,
+          page: () => OnBoardingScreen(),
         ),
 
         // GetPage(
