@@ -3,17 +3,16 @@ import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_co
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-TextHeading(String TextHeading,color) {
+TextParagraph(String TextParagraph,color) {
   return Text(
-    TextHeading,
+    TextParagraph,
+    textAlign: TextAlign.center,
     style: TextStyle(
-      fontWeight: FontWeight.bold,
-      
-        fontFamily: App_Fonts_Constants.Poppins,
-        fontSize: App_Fonts_Constants.heading_font_size.sp,
-        color:color,
-        letterSpacing: 2,
+        fontFamily: App_Fonts_Constants.Inter,
+        fontSize: App_Fonts_Constants.text_font_size.sp,
+        color: color,
         
+        letterSpacing: 2,
         
         wordSpacing: 2),
   );

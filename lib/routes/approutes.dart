@@ -1,4 +1,5 @@
 import 'package:covid_19_trackingapp/routes/routes_name.dart';
+import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
 import 'package:covid_19_trackingapp/view/OnBoardingScreen/OnBoardingScreen.dart';
 import 'package:get/get.dart';
 
@@ -9,10 +10,10 @@ class AppRoutes {
           page: () => OnBoardingScreen(),
         ),
 
-        // GetPage(
-        //   name: RoutesName.Login,
-        //   page: () => Login(),
-        // ),
+        GetPage(
+          name: RoutesName.HomeView,
+          page: () => HomeView(),
+        ),
         // GetPage(name: RoutesName.SignUp, page: () => SignUp()),
         // GetPage(
         //   name: RoutesName.EmailVerification,

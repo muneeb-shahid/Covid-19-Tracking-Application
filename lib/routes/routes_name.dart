@@ -1,6 +1,6 @@
 class RoutesName {
   static String OnBoardingScreen = '/';
-  // static String Login = "/Login";
+  static String HomeView = "/HomeView";
   // static String SignUp = "/SignUp";
   // static String EmailVerification = "/EmailVerification";
   // static String ForgetPassword = "/ForgetPassword";
