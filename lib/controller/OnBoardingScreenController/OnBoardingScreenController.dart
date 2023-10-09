@@ -1,9 +1,7 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
 import 'package:covid_19_trackingapp/model/OnBoardingScreenModel/OnBoardingScreenModel.dart';
-import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart';
 
 class OnBoardingScreenController extends GetxController {
   PageController pagecontroller = PageController();
@@ -28,4 +26,10 @@ class OnBoardingScreenController extends GetxController {
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat felis sit eget euismod et vulputate."),
   ];
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    pagecontroller;
+    super.dispose();
+  }
 }
