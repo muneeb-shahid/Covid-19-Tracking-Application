@@ -7,4 +7,8 @@ class App_Images {
   static String CoronaVirus_logo = "assets/images/CoronaVirus logo.png";
 
   static String Drawer_logo = "assets/images/drawer.png";
+  static String crying = "assets/images/crying.png";
+  static String expressionless = "assets/images/expressionless.png";
+  static String sad_face = "assets/images/sad-face.png";
+  static String smile = "assets/images/smile.png";
 }

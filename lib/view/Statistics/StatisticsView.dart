@@ -8,7 +8,6 @@ import 'package:covid_19_trackingapp/view/Statistics/Total/Total.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../controller/StatisticsViewController/StatisticsViewController.dart';
 
 class StatisticsView extends StatelessWidget {
@@ -21,7 +20,6 @@ class StatisticsView extends StatelessWidget {
     return DefaultTabController(
         length: _statisticsViewController.tabs.length,
         child: Scaffold(
-          extendBodyBehindAppBar: true,
           appBar: AppBar(
             title:
                 TextHeading("Statistics", App_Constants_Colors.app_white_color),
@@ -46,44 +44,12 @@ class StatisticsView extends StatelessWidget {
             ),
           ),
           drawer: ReUseable_Drawer(),
-          body: const TabBarView(
+          body:const TabBarView(
             children: [
               TotalView(),
               CountriesView(),
             ],
           ),
         ));
-
-    //     Scaffold(
-    //   backgroundColor: App_Constants_Colors.app_background_color,
-    //   appBar: AppBar(
-    //     title: TextHeading("Statistics", App_Constants_Colors.app_white_color),
-    //     elevation: 0,
-    //     backgroundColor: App_Constants_Colors.app_green_color,
-    //     bottom: TabBar(
-    //       tabs: _statisticsViewController.myTabs,
-    //       controller: _statisticsViewController.tabController,
-    //       labelColor: App_Constants_Colors.app_white_color,
-    //       labelStyle: TextStyle(backgroundColor: Colors.deepOrange),
-    //     ),
-    //   ),
-    //   drawer: ReUseable_Drawer(),
-    //   body: TabBarView(
-    //       controller: _statisticsViewController.tabController,
-    //       children: [TotalView(), CountriesView()]),
-    // );
-
-    // Container(
-    // height: screenHeight * 0.1,
-    //   decoration: BoxDecoration(
-    //     borderRadius: const BorderRadius.only(
-    //         bottomLeft: Radius.circular(30),
-    //         bottomRight: Radius.circular(30)),
-    //     color: App_Constants_Colors.app_green_color,
-    //   ),
-    //   child: TabBarView(
-    //       controller: _statisticsViewController.tabController,
-    //       children: [TotalView(), CountriesView()]),
-    // )
   }
 }
