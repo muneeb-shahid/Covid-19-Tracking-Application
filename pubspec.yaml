@@ -44,7 +44,6 @@ dependencies:
   shimmer: ^2.0.0
   flutter_phone_direct_caller: ^2.1.1
   url_launcher: ^6.1.14
-  flutter_sms: ^2.3.3
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Responsive_Height,Width/responsive.dart';
+import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
+
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/TextParagraph/TextParagraph.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
