@@ -19,7 +19,8 @@ class StatisticsView extends StatelessWidget {
         Get.put(StatisticsViewController());
     return DefaultTabController(
         length: _statisticsViewController.tabs.length,
-        child: Scaffold(
+        child: 
+        Scaffold(
           appBar: AppBar(
             title:
                 TextHeading("Statistics", App_Constants_Colors.app_white_color),

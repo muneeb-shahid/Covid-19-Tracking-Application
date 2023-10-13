@@ -13,4 +13,5 @@ class App_Constants_Colors {
   static Color app_grey_color = Color(0xff808080);
   static Color app_blue_color = Color(0xff09B5FF);
   static Color app_red_color = Color(0xffFF464F);
+  static Color app_purple_color = Color(0xff800080);
 }
