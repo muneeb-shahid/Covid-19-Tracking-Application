@@ -47,8 +47,8 @@ class StatisticsView extends StatelessWidget {
           drawer: ReUseable_Drawer(),
           body:const TabBarView(
             children: [
-              CountriesView(),
               TotalView(),
+              CountriesView(),
             ],
           ),
         ));

@@ -21,8 +21,7 @@ class TotalView extends StatelessWidget {
     TotalController totalController = Get.put(TotalController());
     return Scaffold(
         backgroundColor: App_Constants_Colors.app_background_color,
-        body:
-         Padding(
+        body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: SingleChildScrollView(
             child: Column(
@@ -31,18 +30,12 @@ class TotalView extends StatelessWidget {
                   future: _statesServices.fetchWorldStatesRecord(),
                   builder: (context, AsyncSnapshot<WorldStatesModel> snapshot) {
                     if (!snapshot.hasData) {
-                      return const Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Center(
-                            child: CircularProgressIndicator(
-                              value: 0.7,
-                              color: Colors.greenAccent,
-                              backgroundColor: Colors.grey,
-                            ),
-                          ),
-                        ],
+                      return  const Center(
+                        child: CircularProgressIndicator(
+                          value: 0.7,
+                          color: Colors.greenAccent,
+                          backgroundColor: Colors.grey,
+                        ),
                       );
                     } else {
                       return Column(
@@ -76,6 +69,9 @@ class TotalView extends StatelessWidget {
                             elevation: 10,
                             child: Column(
                               children: [
+                                SizedBox(
+                                  height: screenHeight * 0.02,
+                                ),
                                 Text(
                                   "Total Statistics",
                                   style: TextStyle(
@@ -89,42 +85,48 @@ class TotalView extends StatelessWidget {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 SizedBox(
-                                  height: screenHeight * 0.03,
+                                  height: screenHeight * 0.05,
                                 ),
-                                PieChart(
-                                  dataMap: {
-                                    "Today Cases": double.parse(
-                                      snapshot.data!.cases.toString(),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      left: screenWidth * 0.07,
+                                      bottom: screenHeight * 0.03),
+                                  child: PieChart(
+                                    dataMap: {
+                                      "Today Cases": double.parse(
+                                        snapshot.data!.cases.toString(),
+                                      ),
+                                      "Active Cases": double.parse(
+                                        snapshot.data!.active.toString(),
+                                      ),
+                                      "Recovered Cases": double.parse(
+                                        snapshot.data!.recovered.toString(),
+                                      ),
+                                      "Deaths Cases": double.parse(
+                                        snapshot.data!.deaths.toString(),
+                                      ),
+                                    },
+                                    animationDuration:
+                                        const Duration(milliseconds: 1500),
+                                    chartRadius:
+                                        MediaQuery.of(context).size.width / 3.2,
+                                    colorList: totalController.colorList,
+                                    chartType: ChartType.ring,
+                                    ringStrokeWidth: 15,
+                                    centerText: "Corono Virus",
+                                    legendOptions: const LegendOptions(
+                                      legendPosition: LegendPosition.right,
+                                      legendShape: BoxShape.circle,
+                                      legendTextStyle: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                      ),
                                     ),
-                                    "Active Cases": double.parse(
-                                      snapshot.data!.active.toString(),
+                                    chartValuesOptions:
+                                        const ChartValuesOptions(
+                                      showChartValuesInPercentage: true,
+                                      showChartValuesOutside: true,
                                     ),
-                                    "Recovered Cases": double.parse(
-                                      snapshot.data!.recovered.toString(),
-                                    ),
-                                    "Deaths Cases": double.parse(
-                                      snapshot.data!.deaths.toString(),
-                                    ),
-                                  },
-                                  animationDuration:
-                                      const Duration(milliseconds: 800),
-                                  chartRadius:
-                                      MediaQuery.of(context).size.width / 3.2,
-                                  colorList: totalController.colorList,
-                                  chartType: ChartType.ring,
-                                  ringStrokeWidth: 15,
-                                  centerText: "Corono Virus",
-                                  legendOptions: const LegendOptions(
-                                    legendPosition: LegendPosition.right,
-                                    legendShape: BoxShape.circle,
-                                    legendTextStyle: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                  chartValuesOptions: const ChartValuesOptions(
-                                    showChartValuesInPercentage: true,
-                                    showChartValuesOutside: true,
                                   ),
                                 ),
                               ],

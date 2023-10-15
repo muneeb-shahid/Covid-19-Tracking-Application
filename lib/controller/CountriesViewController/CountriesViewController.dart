@@ -10,20 +10,13 @@ class CountriesViewController extends GetxController {
   FocusNode focusnode1 = FocusNode();
   RxString searchText = ''.obs;
 
-  UpdateonChanged(value) {
-    _searchController.value = value;
-  }
-
-  @override
-  void onInit() {
-    UpdateonChanged;
-    // TODO: implement onInit
-    super.onInit();
+  void UpdateonChanged(value) {
+    searchText.value = value;
+    update();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     focusnode1;
     searchController;
     super.dispose();
