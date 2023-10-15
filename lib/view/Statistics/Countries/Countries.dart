@@ -3,6 +3,7 @@ import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/TextParagraph/TextParagraph.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/services/StatesServices/StatesServices.dart';
+import 'package:covid_19_trackingapp/view/FullScreenCountriesDetail/FullScreenCountriesDetail.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controller/CountriesViewController/CountriesViewController.dart';
@@ -115,20 +116,31 @@ class CountriesView extends StatelessWidget {
                                   .searchController.text.isEmpty) {
                                 return Column(
                                   children: [
-                                    ListTile(
-                                      leading: Image(
-                                          height: screenHeight * 0.15,
-                                          width: screenWidth * 0.15,
-                                          image: NetworkImage(
-                                            snapshot.data![index]["countryInfo"]
-                                                ["flag"],
-                                          )),
-                                      title: TextHeading(
-                                          snapshot.data![index]["country"],
-                                          App_Constants_Colors.app_black_color),
-                                      subtitle: TextParagraph(
-                                          "Total Cases: ${snapshot.data![index]["cases"].toString()}\nTotal Recovered: ${snapshot.data![index]["recovered"].toString()} ",
-                                          App_Constants_Colors.app_grey_color),
+                                    InkWell(
+                                      onTap: () {
+                                        Get.to(
+                                          FullScreenCountriesDetail(
+                                            data: snapshot.data![index],
+                                          ),
+                                        );
+                                      },
+                                      child: ListTile(
+                                        leading: Image(
+                                            height: screenHeight * 0.15,
+                                            width: screenWidth * 0.15,
+                                            image: NetworkImage(
+                                              snapshot.data![index]
+                                                  ["countryInfo"]["flag"],
+                                            )),
+                                        title: TextHeading(
+                                            snapshot.data![index]["country"],
+                                            App_Constants_Colors
+                                                .app_black_color),
+                                        subtitle: TextParagraph(
+                                            "Total Cases: ${snapshot.data![index]["cases"].toString()}\nTotal Recovered: ${snapshot.data![index]["recovered"].toString()} ",
+                                            App_Constants_Colors
+                                                .app_grey_color),
+                                      ),
                                     ),
                                     SizedBox(
                                       height: screenHeight * 0.02,
@@ -140,20 +152,31 @@ class CountriesView extends StatelessWidget {
                                       .toLowerCase())) {
                                 return Column(
                                   children: [
-                                    ListTile(
-                                      leading: Image(
-                                          height: screenHeight * 0.15,
-                                          width: screenWidth * 0.15,
-                                          image: NetworkImage(
-                                            snapshot.data![index]["countryInfo"]
-                                                ["flag"],
-                                          )),
-                                      title: TextHeading(
-                                          snapshot.data![index]["country"],
-                                          App_Constants_Colors.app_black_color),
-                                      subtitle: TextParagraph(
-                                          "Total Cases: ${snapshot.data![index]["cases"].toString()}\nTotal Recovered: ${snapshot.data![index]["recovered"].toString()} ",
-                                          App_Constants_Colors.app_grey_color),
+                                    InkWell(
+                                      onTap: () {
+                                        Get.to(
+                                          FullScreenCountriesDetail(
+                                            data: snapshot.data![index],
+                                          ),
+                                        );
+                                      },
+                                      child: ListTile(
+                                        leading: Image(
+                                            height: screenHeight * 0.15,
+                                            width: screenWidth * 0.15,
+                                            image: NetworkImage(
+                                              snapshot.data![index]
+                                                  ["countryInfo"]["flag"],
+                                            )),
+                                        title: TextHeading(
+                                            snapshot.data![index]["country"],
+                                            App_Constants_Colors
+                                                .app_black_color),
+                                        subtitle: TextParagraph(
+                                            "Total Cases: ${snapshot.data![index]["cases"].toString()}\nTotal Recovered: ${snapshot.data![index]["recovered"].toString()} ",
+                                            App_Constants_Colors
+                                                .app_grey_color),
+                                      ),
                                     ),
                                     SizedBox(
                                       height: screenHeight * 0.02,
