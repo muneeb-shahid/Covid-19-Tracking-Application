@@ -30,7 +30,7 @@ class TotalView extends StatelessWidget {
                   future: _statesServices.fetchWorldStatesRecord(),
                   builder: (context, AsyncSnapshot<WorldStatesModel> snapshot) {
                     if (!snapshot.hasData) {
-                      return  const Center(
+                      return const Center(
                         child: CircularProgressIndicator(
                           value: 0.7,
                           color: Colors.greenAccent,
@@ -65,6 +65,7 @@ class TotalView extends StatelessWidget {
                             App_Constants_Colors.app_red_color,
                           ),
                           Card(
+                         
                             shadowColor: Colors.white,
                             elevation: 10,
                             child: Column(
@@ -87,46 +88,40 @@ class TotalView extends StatelessWidget {
                                 SizedBox(
                                   height: screenHeight * 0.05,
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: screenWidth * 0.07,
-                                      bottom: screenHeight * 0.03),
-                                  child: PieChart(
-                                    dataMap: {
-                                      "Today Cases": double.parse(
-                                        snapshot.data!.cases.toString(),
-                                      ),
-                                      "Active Cases": double.parse(
-                                        snapshot.data!.active.toString(),
-                                      ),
-                                      "Recovered Cases": double.parse(
-                                        snapshot.data!.recovered.toString(),
-                                      ),
-                                      "Deaths Cases": double.parse(
-                                        snapshot.data!.deaths.toString(),
-                                      ),
-                                    },
-                                    animationDuration:
-                                        const Duration(milliseconds: 1500),
-                                    chartRadius:
-                                        MediaQuery.of(context).size.width / 3.2,
-                                    colorList: totalController.colorList,
-                                    chartType: ChartType.ring,
-                                    ringStrokeWidth: 15,
-                                    centerText: "Corono Virus",
-                                    legendOptions: const LegendOptions(
-                                      legendPosition: LegendPosition.right,
-                                      legendShape: BoxShape.circle,
-                                      legendTextStyle: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black,
-                                      ),
+                                PieChart(
+                                  dataMap: {
+                                    "Today Cases": double.parse(
+                                      snapshot.data!.cases.toString(),
                                     ),
-                                    chartValuesOptions:
-                                        const ChartValuesOptions(
-                                      showChartValuesInPercentage: true,
-                                      showChartValuesOutside: true,
+                                    "Active Cases": double.parse(
+                                      snapshot.data!.active.toString(),
                                     ),
+                                    "Recovered Cases": double.parse(
+                                      snapshot.data!.recovered.toString(),
+                                    ),
+                                    "Deaths Cases": double.parse(
+                                      snapshot.data!.deaths.toString(),
+                                    ),
+                                  },
+                                  animationDuration:
+                                      const Duration(milliseconds: 1500),
+                                  chartRadius: 
+                                      MediaQuery.of(context).size.width / 3.2,
+                                  colorList: totalController.colorList,
+                                  chartType: ChartType.ring,
+                                  ringStrokeWidth: 15,
+                                  centerText: "Corono Virus",
+                                  legendOptions: const LegendOptions(
+                                    legendPosition: LegendPosition.bottom,
+                                    legendShape: BoxShape.circle,
+                                    legendTextStyle: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  chartValuesOptions: const ChartValuesOptions(
+                                    showChartValuesInPercentage: true,
+                                    showChartValuesOutside: true,
                                   ),
                                 ),
                               ],
