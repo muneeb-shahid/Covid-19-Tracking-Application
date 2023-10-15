@@ -14,4 +14,15 @@ class StatesServices {
       throw Exception("Error");
     }
   }
+
+  Future<List<dynamic>> fetchCountriesModel() async {
+    var data;
+    final response = await http.get(Uri.parse(API_URL.worldCountriesApi));
+    if (response.statusCode == 200) {
+      data = jsonDecode(response.body);
+      return data;
+    } else {
+      throw Exception("Error");
+    }
+  }
 }

@@ -11,7 +11,7 @@ TextHeading(String TextHeading,color) {
       fontWeight: FontWeight.bold,
       
         fontFamily: App_Fonts_Constants.Poppins,
-        fontSize: App_Fonts_Constants.heading_font_size.sp,
+        fontSize: App_Fonts_Constants.sub_heading_font_size.sp,
         color:color,
         letterSpacing: 2,
         
