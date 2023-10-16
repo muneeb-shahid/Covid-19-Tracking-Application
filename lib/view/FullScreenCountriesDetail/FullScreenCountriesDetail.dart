@@ -23,7 +23,12 @@ class FullScreenCountriesDetail extends StatelessWidget {
       backgroundColor: App_Constants_Colors.app_background_color,
       appBar: AppBar(
           backgroundColor: App_Constants_Colors.app_green_color,
-          elevation: 0,
+           elevation: 0,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20)),
+            ),
           title: TextHeading(
               data["country"], App_Constants_Colors.app_white_color)),
       body: SingleChildScrollView(

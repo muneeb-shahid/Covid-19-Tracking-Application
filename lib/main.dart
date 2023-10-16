@@ -1,4 +1,5 @@
 import 'package:covid_19_trackingapp/routes/approutes.dart';
+import 'package:covid_19_trackingapp/view/Help/HelpView.dart';
 import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
 import 'package:covid_19_trackingapp/view/Statistics/Countries/Countries.dart';
 import 'package:covid_19_trackingapp/view/Statistics/StatisticsView.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: StatisticsView(),
+          home: HelpView(),
           // getPages: AppRoutes.appRoutes(),
         );
       },

@@ -30,8 +30,8 @@ class CountriesView extends StatelessWidget {
                     onChanged: (value) {
                       countriesViewController.UpdateonChanged(value);
                     },
-                    style: TextStyle(
-                        color: App_Constants_Colors.app_black_color),
+                    style:
+                        TextStyle(color: App_Constants_Colors.app_black_color),
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -105,11 +105,10 @@ class CountriesView extends StatelessWidget {
                             },
                           ),
                         );
-                      } else {
+                      } 
+                      else {
                         return Expanded(
-                          child: 
-                          
-                          ListView.builder(
+                          child: ListView.builder(
                             itemCount: snapshot.data!.length,
                             itemBuilder: (context, index) {
                               String name = snapshot.data![index]["country"];
@@ -185,10 +184,9 @@ class CountriesView extends StatelessWidget {
                                     ),
                                   ],
                                 );
-                              } 
-                              else {
+                              } else {
                                 return Container(
-                                  // child: TextHeading("Search Result Not Found", App_Constants_Colors.app_black_color),
+                                  // child: TextHeading("TextHeading", App_Constants_Colors.app_black_color),
                                 );
                               }
                             },
