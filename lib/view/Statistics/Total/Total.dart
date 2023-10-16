@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:pie_chart/pie_chart.dart';
-
+import 'package:lottie/lottie.dart';
 import '../../../controller/TotalController/TotalController.dart';
 
 class TotalView extends StatelessWidget {
@@ -30,11 +30,12 @@ class TotalView extends StatelessWidget {
                   future: _statesServices.fetchWorldStatesRecord(),
                   builder: (context, AsyncSnapshot<WorldStatesModel> snapshot) {
                     if (!snapshot.hasData) {
-                      return const Center(
-                        child: CircularProgressIndicator(
-                          value: 0.7,
-                          color: Colors.greenAccent,
-                          backgroundColor: Colors.grey,
+                      return Center(
+                        child: Lottie.asset(
+                          App_Images.loading,
+                          repeat: true,
+                          width: screenWidth * 0.2,
+                          height: screenHeight * 0.2,
                         ),
                       );
                     } else {
@@ -65,7 +66,6 @@ class TotalView extends StatelessWidget {
                             App_Constants_Colors.app_red_color,
                           ),
                           Card(
-                         
                             shadowColor: Colors.white,
                             elevation: 10,
                             child: Column(
@@ -105,7 +105,7 @@ class TotalView extends StatelessWidget {
                                   },
                                   animationDuration:
                                       const Duration(milliseconds: 1500),
-                                  chartRadius: 
+                                  chartRadius:
                                       MediaQuery.of(context).size.width / 3.2,
                                   colorList: totalController.colorList,
                                   chartType: ChartType.ring,

@@ -11,4 +11,10 @@ class App_Images {
   static String expressionless = "assets/images/expressionless.png";
   static String sad_face = "assets/images/sad-face.png";
   static String smile = "assets/images/smile.png";
+
+
+  static String loading = "assets/images/loading.json";
+
+
+ 
 }

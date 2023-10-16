@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
           home: StatisticsView(),
-          getPages: AppRoutes.appRoutes(),
+          // getPages: AppRoutes.appRoutes(),
         );
       },
     );

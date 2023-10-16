@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 Widget ReusbaleRow(text, color, num, color1) {
   return Padding(
-    padding:  EdgeInsets.only(left: screenWidth*0.03,right: screenWidth*0.03),
+    padding:  EdgeInsets.only(left: screenWidth*0.04,right: screenWidth*0.04),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
