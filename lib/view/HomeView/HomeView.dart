@@ -1,4 +1,5 @@
 import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
+import 'package:covid_19_trackingapp/Reuseable%20Components/ReuseablePrevention/ReuseablePrevention.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
@@ -7,6 +8,7 @@ import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../Reuseable Components/ReUseable Drawer/ReUseableDrawer.dart';
+
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
@@ -118,13 +120,35 @@ class HomeView extends StatelessWidget {
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   )
                 ],
               ),
             ),
           ),
+
+          // SizedBox(
+          //   height: screenHeight * 0.1,
+          // ),
+
+          Expanded(
+            child: Padding(
+            padding:  EdgeInsets.only(left: screenWidth*0.05,right:  screenWidth*0.05,top:  screenHeight*0.04),
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: list_PreventionModel.length,
+                itemBuilder: (context, index) {
+                  return buildPreventionCard(
+                      list_PreventionModel: list_PreventionModel[index]);
+                },
+                separatorBuilder: (context, index) => SizedBox(
+                  width: screenWidth * 0.05,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );

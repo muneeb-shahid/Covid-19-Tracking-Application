@@ -1,14 +1,19 @@
+import 'package:covid_19_trackingapp/Images/images.dart';
 import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
+import 'package:covid_19_trackingapp/model/Prevention/Prevention.dart';
 import 'package:flutter/material.dart';
 
-Widget ReuseableHelpSymtomps(image, headingtext) {
-  return 
-  Container(
-    height: screenHeight * 0.3,
-    width: screenWidth * 0.4,
-    child: Card(
+List<PreventionModel> list_PreventionModel = [
+  PreventionModel(image: App_Images.Usemask, title: "Use Mask"),
+  PreventionModel(image: App_Images.Washyourhand, title: "Wash your hand"),
+  PreventionModel(
+      image: App_Images.Avoidclosecontact, title: "Avoid close contact"),
+];
+
+Widget buildPreventionCard({required PreventionModel list_PreventionModel}) =>
+    Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       elevation: 10,
       shadowColor: Colors.white,
@@ -21,9 +26,9 @@ Widget ReuseableHelpSymtomps(image, headingtext) {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                image,
-                height: screenHeight * 0.15,
-                width: screenWidth * 0.3,
+                list_PreventionModel.image,
+                // height: screenHeight * 0.15,
+                // width: screenWidth * 0.3,
               ),
             ],
           ),
@@ -34,12 +39,10 @@ Widget ReuseableHelpSymtomps(image, headingtext) {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              TextHeading(headingtext, App_Constants_Colors.app_black_color),
+              TextHeading(list_PreventionModel.title,
+                  App_Constants_Colors.app_black_color),
             ],
           ),
         ],
       ),
-    ),
-  );
-
-}
+    );

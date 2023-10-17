@@ -26,7 +26,7 @@ class SymptomsView extends StatelessWidget {
       ),
       drawer: ReUseable_Drawer(),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding:  EdgeInsets.only(left: screenWidth*0.05,right:  screenWidth*0.05,top:  screenHeight*0.04),
         child: SingleChildScrollView(
           child: Column(
             children: [

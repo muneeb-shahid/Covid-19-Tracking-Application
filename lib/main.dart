@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: SymptomsView(),
+          home: HomeView(),
           // getPages: AppRoutes.appRoutes(),
         );
       },

@@ -23,4 +23,7 @@ class App_Images {
   static String fever = "assets/images/fever.png";
 
   static String vomit = "assets/images/vomit.png";
+  static String Avoidclosecontact = "assets/images/Avoidclosecontact.png";
+  static String Usemask = "assets/images/Usemask.png";
+  static String Washyourhand = "assets/images/Washyourhand.png";
 }
