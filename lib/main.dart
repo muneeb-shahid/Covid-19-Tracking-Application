@@ -3,6 +3,7 @@ import 'package:covid_19_trackingapp/view/Help/HelpView.dart';
 import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
 import 'package:covid_19_trackingapp/view/Statistics/Countries/Countries.dart';
 import 'package:covid_19_trackingapp/view/Statistics/StatisticsView.dart';
+import 'package:covid_19_trackingapp/view/Symptoms/SymptomsView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: HelpView(),
+          home: SymptomsView(),
           // getPages: AppRoutes.appRoutes(),
         );
       },

@@ -15,4 +15,12 @@ class App_Images {
   static String loading = "assets/images/loading.json";
 
   static String help = "assets/images/help.png";
+  static String symtomps = "assets/images/symtomps.png";
+  static String DryCough = "assets/images/DryCough.png";
+
+  static String Sneezing = "assets/images/Sneezing.png";
+
+  static String fever = "assets/images/fever.png";
+
+  static String vomit = "assets/images/vomit.png";
 }

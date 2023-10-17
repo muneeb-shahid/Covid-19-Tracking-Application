@@ -66,7 +66,7 @@ class HomeView extends StatelessWidget {
                           GestureDetector(
                             onTap: () async {
                               await FlutterPhoneDirectCaller.callNumber(
-                                  "+923430276090");
+                                  "03430276090");
                             },
                             child: Container(
                               width: screenWidth * 0.4,

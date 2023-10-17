@@ -4,7 +4,6 @@ import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Wi
 import 'package:covid_19_trackingapp/Reuseable%20Components/ReuseableHelpCard/ReuseableHelpCard.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:flutter/material.dart';
-
 import '../../constants/TextHeading/text_heading.dart';
 
 class HelpView extends StatelessWidget {
