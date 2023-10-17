@@ -22,10 +22,13 @@ class TotalView extends StatelessWidget {
     return Scaffold(
         backgroundColor: App_Constants_Colors.app_background_color,
         body: Padding(
-          padding: const EdgeInsets.all(20.0),
+           padding:  EdgeInsets.only(left: screenWidth*0.05,right:  screenWidth*0.05,),
           child: SingleChildScrollView(
             child: Column(
               children: [
+                 SizedBox(
+                height: screenHeight * 0.03,
+              ),
                 FutureBuilder(
                   future: _statesServices.fetchWorldStatesRecord(),
                   builder: (context, AsyncSnapshot<WorldStatesModel> snapshot) {

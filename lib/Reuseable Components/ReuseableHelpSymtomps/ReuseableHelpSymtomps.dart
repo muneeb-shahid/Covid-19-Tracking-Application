@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 Widget ReuseableHelpSymtomps(image, headingtext) {
   return 
-  Container(
+  SizedBox(
     height: screenHeight * 0.3,
     width: screenWidth * 0.4,
     child: Card(
@@ -37,6 +37,7 @@ Widget ReuseableHelpSymtomps(image, headingtext) {
               TextHeading(headingtext, App_Constants_Colors.app_black_color),
             ],
           ),
+      
         ],
       ),
     ),

@@ -23,13 +23,13 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: false, 
           title: 'Covid 19 Application',
           theme: ThemeData(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: HomeView(),
-          // getPages: AppRoutes.appRoutes(),
+          // home: HomeView(),
+          getPages: AppRoutes.appRoutes(),
         );
       },
     );

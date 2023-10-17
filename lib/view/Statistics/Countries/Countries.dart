@@ -22,9 +22,15 @@ class CountriesView extends StatelessWidget {
         body: GetBuilder<CountriesViewController>(
           builder: (controller) {
             return Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: EdgeInsets.only(
+                left: screenWidth * 0.05,
+                right: screenWidth * 0.05,
+              ),
               child: Column(
                 children: [
+                  SizedBox(
+                    height: screenHeight * 0.03,
+                  ),
                   TextFormField(
                     focusNode: countriesViewController.focusnode1,
                     onChanged: (value) {
@@ -61,7 +67,7 @@ class CountriesView extends StatelessWidget {
                     controller: countriesViewController.searchController,
                   ),
                   SizedBox(
-                    height: screenHeight * 0.02,
+                    height: screenHeight * 0.01,
                   ),
                   FutureBuilder(
                     future: _statesServices.fetchCountriesModel(),
@@ -105,8 +111,7 @@ class CountriesView extends StatelessWidget {
                             },
                           ),
                         );
-                      } 
-                      else {
+                      } else {
                         return Expanded(
                           child: ListView.builder(
                             itemCount: snapshot.data!.length,
@@ -186,8 +191,7 @@ class CountriesView extends StatelessWidget {
                                 );
                               } else {
                                 return Container(
-                                  // child: TextHeading("TextHeading", App_Constants_Colors.app_black_color),
-                                );
+                                    );
                               }
                             },
                           ),

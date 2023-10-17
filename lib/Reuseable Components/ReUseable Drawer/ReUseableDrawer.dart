@@ -3,11 +3,9 @@ import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Wi
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
-import 'package:covid_19_trackingapp/routes/approutes.dart';
 import 'package:covid_19_trackingapp/view/Articles/ArticlesView.dart';
 import 'package:covid_19_trackingapp/view/Help/HelpView.dart';
 import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
-import 'package:covid_19_trackingapp/view/Preventation/PreventationView.dart';
 import 'package:covid_19_trackingapp/view/Statistics/StatisticsView.dart';
 import 'package:covid_19_trackingapp/view/Symptoms/SymptomsView.dart';
 import 'package:flutter/material.dart';
@@ -84,19 +82,7 @@ ReUseable_Drawer() {
               ),
             ),
           ),
-          GestureDetector(
-            onTap: () => Get.off(const PreventationView()),
-            child: ListTile(
-              leading: Icon(
-                Icons.library_add_check_outlined,
-                color: App_Constants_Colors.app_white_color,
-              ),
-              title: TextHeading(
-                "Preventation",
-                App_Constants_Colors.app_white_color,
-              ),
-            ),
-          ),
+          
           GestureDetector(
             onTap: () => Get.off(const ArticlesView()),
             child: ListTile(

@@ -127,27 +127,51 @@ class HomeView extends StatelessWidget {
               ),
             ),
           ),
-
-          // SizedBox(
-          //   height: screenHeight * 0.1,
-          // ),
-
-          Expanded(
-            child: Padding(
-            padding:  EdgeInsets.only(left: screenWidth*0.05,right:  screenWidth*0.05,top:  screenHeight*0.04),
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemCount: list_PreventionModel.length,
-                itemBuilder: (context, index) {
-                  return buildPreventionCard(
-                      list_PreventionModel: list_PreventionModel[index]);
-                },
-                separatorBuilder: (context, index) => SizedBox(
-                  width: screenWidth * 0.05,
+          SizedBox(
+            height: screenHeight * 0.02,
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: screenWidth * 0.05,
+              right: screenWidth * 0.05,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextHeading("Prevention", App_Constants_Colors.app_black_color),
+                Icon(
+                  Icons.forward_outlined,
+                  color: App_Constants_Colors.app_black_color,
+                )
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: screenHeight * 0.25,
+                child: Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        left: screenWidth * 0.05,
+                        right: screenWidth * 0.05,
+                        top: screenHeight * 0.02),
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: list_PreventionModel.length,
+                      itemBuilder: (context, index) {
+                        return buildPreventionCard(
+                            list_PreventionModel: list_PreventionModel[index]);
+                      },
+                      separatorBuilder: (context, index) => SizedBox(
+                        width: screenWidth * 0.05,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           )
         ],
       ),
