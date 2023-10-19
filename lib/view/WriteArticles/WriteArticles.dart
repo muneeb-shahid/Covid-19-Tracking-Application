@@ -9,9 +9,6 @@ import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_co
 import 'package:covid_19_trackingapp/view/Login/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
-
-import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class WriteArticles extends StatelessWidget {
@@ -110,15 +107,14 @@ class WriteArticles extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: screenHeight * 0.02,
+                height: screenHeight * 0.03,
               ),
               customButton(
-                  nextScreen: LoginPage(),
+                  nextscreen: LoginPage(),
                   innerColor: App_Constants_Colors.app_green_color,
                   textColor: App_Constants_Colors.app_white_color,
-                  text: "Login")
-              // customLogin_SignupButton(func: ()=>Get.to(LoginPage()), textColor: App_Constants_Colors.app_white_color, text: "Login")
-              // ElevatedButton(onPressed: (){}, child: Text("sfs"))
+                  text: "Go to Login Page")
+         
             ],
           ),
         ),

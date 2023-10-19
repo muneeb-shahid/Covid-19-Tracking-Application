@@ -18,9 +18,10 @@ ReUseable_Drawer() {
       backgroundColor: App_Constants_Colors.app_green_color,
       child: ListView(
         children: [
-          Image.asset(
+          SizedBox(height: screenHeight*0.04,)
+,          Image.asset(
             App_Images.Drawer_logo,
-            height: screenHeight * 0.3,
+            height: screenHeight * 0.2,
           ),
           ListTile(
               title: Center(
@@ -128,7 +129,7 @@ ReUseable_Drawer() {
           GestureDetector(
               onTap: () => Get.back(),
               child: Container(
-                height: 200,
+                height: screenHeight*0.2,
                 decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     borderRadius: const BorderRadius.only(
@@ -141,6 +142,7 @@ ReUseable_Drawer() {
                   color: App_Constants_Colors.app_white_color,
                 ),
               )),
+             
         ],
       ));
 }

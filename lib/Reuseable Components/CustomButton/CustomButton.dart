@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-
 Widget customButton(
-    {required nextScreen,
+    {required nextscreen,
     required var innerColor,
     required var textColor,
     required String text}) {
@@ -16,7 +15,7 @@ Widget customButton(
       minWidth: screenWidth * 0.8,
       height: screenHeight * 0.06,
       onPressed: () {
-        Get.off(nextScreen);
+        Get.to(nextscreen);
       },
       color: innerColor,
       shape: RoundedRectangleBorder(
