@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "649793624307",
+    "project_id": "covid-19-a71b8",
+    "storage_bucket": "covid-19-a71b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649793624307:android:72a7955952ba567961bf86",
+        "android_client_info": {
+          "package_name": "com.example.covid_19_trackingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApIKBtaS-BLo68NdE4QTr04hG9FHMYTt0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

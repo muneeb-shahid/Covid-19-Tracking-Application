@@ -18,7 +18,10 @@ class OnBoardingScreen extends StatelessWidget {
         Get.put(OnBoardingScreenController());
     return Scaffold(
       backgroundColor: App_Constants_Colors.app_background_color,
-      body: Stack(
+      body: 
+      
+      
+      Stack(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 60, left: 30, right: 30),

@@ -13,6 +13,7 @@ class App_Images {
   static String smile = "assets/images/smile.png";
 
   static String loading = "assets/images/loading.json";
+static String writeBlog = "assets/images/writeBlog.json";
 
   static String help = "assets/images/help.png";
   static String symtomps = "assets/images/symtomps.png";

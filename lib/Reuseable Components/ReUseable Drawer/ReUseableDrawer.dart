@@ -8,6 +8,7 @@ import 'package:covid_19_trackingapp/view/Help/HelpView.dart';
 import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
 import 'package:covid_19_trackingapp/view/Statistics/StatisticsView.dart';
 import 'package:covid_19_trackingapp/view/Symptoms/SymptomsView.dart';
+import 'package:covid_19_trackingapp/view/WriteArticles/WriteArticles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -82,7 +83,6 @@ ReUseable_Drawer() {
               ),
             ),
           ),
-          
           GestureDetector(
             onTap: () => Get.off(const ArticlesView()),
             child: ListTile(
@@ -92,6 +92,19 @@ ReUseable_Drawer() {
               ),
               title: TextHeading(
                 "Articles",
+                App_Constants_Colors.app_white_color,
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () => Get.off(const WriteArticles()),
+            child: ListTile(
+              leading: Icon(
+                Icons.create,
+                color: App_Constants_Colors.app_white_color,
+              ),
+              title: TextHeading(
+                "Write an Articles",
                 App_Constants_Colors.app_white_color,
               ),
             ),
@@ -115,12 +128,16 @@ ReUseable_Drawer() {
           GestureDetector(
               onTap: () => Get.back(),
               child: Container(
+                height: 200,
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle,
+                    shape: BoxShape.rectangle,
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(200),
+                        topRight: Radius.circular(200)),
                     color: App_Constants_Colors.app_black_color),
                 child: Icon(
                   Icons.close_rounded,
-                  size: 35,
+                  size: 60,
                   color: App_Constants_Colors.app_white_color,
                 ),
               )),
