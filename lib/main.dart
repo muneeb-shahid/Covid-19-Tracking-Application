@@ -2,6 +2,7 @@ import 'package:covid_19_trackingapp/Reuseable%20Components/InternetConnection/I
 import 'package:covid_19_trackingapp/routes/approutes.dart';
 import 'package:covid_19_trackingapp/view/Help/HelpView.dart';
 import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
+import 'package:covid_19_trackingapp/view/Login/Login.dart';
 import 'package:covid_19_trackingapp/view/Statistics/Countries/Countries.dart';
 import 'package:covid_19_trackingapp/view/Statistics/StatisticsView.dart';
 import 'package:covid_19_trackingapp/view/Symptoms/SymptomsView.dart';

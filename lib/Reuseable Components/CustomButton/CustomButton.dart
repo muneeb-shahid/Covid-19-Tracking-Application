@@ -19,8 +19,7 @@ Widget customButton(
       },
       color: innerColor,
       shape: RoundedRectangleBorder(
-          side:
-              BorderSide(color: App_Constants_Colors.app_black_color, width: 2),
+        
           borderRadius: BorderRadius.circular(20)),
       child: FittedBox(
         child: Text(

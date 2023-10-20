@@ -5,50 +5,98 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
-  // SignUpController _signUpController = Get.put(SignUpController());
-  // TextEditingController _loginEmail = TextEditingController();
-  // get LoginEmail => _loginEmail;
-  // TextEditingController _loginPassowrd = TextEditingController();
-  // get LoginPassowrd => _loginPassowrd;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  get login_formKey => _formKey;
 
-  final TextEditingController _emailTextEditingController =
+  var isObscured = true.obs;
+  bool _loading = false;
+  get loading => _loading;
+
+  final TextEditingController _login_EmailTextEditingController =
       TextEditingController();
-  get EmailTextEditingController => _emailTextEditingController;
+  get login_emailAddress => _login_EmailTextEditingController;
 
-  final TextEditingController _passwordTextEditingController =
+  final TextEditingController _login_PasswordTextEditingController =
       TextEditingController();
-  get PasswordTextEditingController => _passwordTextEditingController;
-  final email_ = ''.obs;
+  get login_password => _login_PasswordTextEditingController;
 
-  saveEmail(String input) {
-    email_.value = input;
-  }
+  FocusNode _focusNode1 = FocusNode();
+  get focusNode1 => _focusNode1;
+  FocusNode _focusNode2 = FocusNode();
+  get focusNode2 => _focusNode2;
 
-  final _auth = FirebaseAuth.instance;
-  late String email;
-  late String password;
-  final formKey = GlobalKey<FormState>();
-  var isObscured = true.obs; // Observe
-  final loadingController = false.obs;
-
-  void toggleObscure() {
+  void toggleObscure() {  
     isObscured.toggle(); // Toggle the value of _isObscured
   }
 
-  onLogin() async {
-    if (formKey.currentState!.validate()) {
-      try {
-        // Start loading
-        loadingController(true);
+  // login() async {
+  //   if (formKey.currentState!.validate()) {
+  //     formKey.currentState!.save();
 
-        final credential = await FirebaseAuth.instance
-            .signInWithEmailAndPassword(email: email, password: password);
-             Get.offAll(() => CreateBlog());
+  //     try {
+  //       final credential =
+  //           await FirebaseAuth.instance.signInWithEmailAndPassword(
+  //         email: login_emailAddress.text,
+  //         password: login_password.text,
+  //       );
+
+  //       if (credential.user != null) {
+  //         Get.offAll(CreateBlog());
+  //       }
+
+  //       print('User Successfully login.');
+  //       Get.snackbar(
+  //         'Welcome Back',
+  //         "User Successfully login.",
+  //         icon: const Icon(Icons.logout_outlined, color: Colors.black),
+  //         backgroundColor: App_Constants_Colors.app_white_color,
+  //         colorText: Colors.black,
+  //         snackPosition: SnackPosition.TOP,
+  //       );
+  //     } on FirebaseAuthException catch (e) {
+  //       if (e.code == 'user-not-found') {
+  //         // print('No user found for that email.');
+  //         Get.snackbar(
+  //           'Error',
+  //           "No User Found for that Email",
+  //           icon: const Icon(Icons.error_outline, color: Colors.black),
+  //           backgroundColor: App_Constants_Colors.app_white_color,
+  //           colorText: Colors.black,
+  //           snackPosition: SnackPosition.TOP,
+  //         );
+  //       } else if (e.code == 'wrong-password') {
+  //         // print('Wrong password provided for that user.');
+  //         Get.snackbar(
+  //           'Error',
+  //           "Wrong Password Provided by User",
+  //           icon: const Icon(Icons.cancel_outlined, color: Colors.black),
+  //           backgroundColor: App_Constants_Colors.app_white_color,
+  //           colorText: Colors.black,
+  //           snackPosition: SnackPosition.TOP,
+  //         );
+  //       }
+  //       _login_EmailTextEditingController.clear();
+  //       _login_PasswordTextEditingController.clear();
+  //     }
+  //   }
+  // }
+
+
+ login() async {
+    if (login_formKey.currentState!.validate()) {
+      login_formKey.currentState!.save();
+
+      try {
+        final credential =
+            await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: login_emailAddress.text,
+          password: login_password.text,
+        );
+        print('User Successfully login.');
+        Get.offAll(CreateBlog());
       } on FirebaseAuthException catch (e) {
-        loadingController(false); // Stop loading
         if (e.code == 'user-not-found') {
-          print("No User Found for that Email");
-          // Show snackbar using GetX
+          print('No user found for that email.');
           Get.snackbar(
             'Error',
             "No User Found for that Email",
@@ -58,8 +106,7 @@ class LoginController extends GetxController {
             snackPosition: SnackPosition.TOP,
           );
         } else if (e.code == 'wrong-password') {
-          print("Wrong Password Provided by User");
-          // Show snackbar using GetX
+          print('Wrong password provided for that user.');
           Get.snackbar(
             'Error',
             "Wrong Password Provided by User",
@@ -70,6 +117,22 @@ class LoginController extends GetxController {
           );
         }
       }
+      _login_EmailTextEditingController.clear();
+      _login_PasswordTextEditingController.clear();
     }
+  }
+
+
+
+  @override
+
+
+  void dispose() {
+    _login_EmailTextEditingController.dispose();
+    _login_PasswordTextEditingController.dispose();
+    _focusNode1.dispose();
+    _focusNode2.dispose();
+
+    super.dispose();
   }
 }
