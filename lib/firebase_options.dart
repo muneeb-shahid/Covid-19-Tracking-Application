@@ -26,7 +26,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -50,19 +53,10 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyApIKBtaS-BLo68NdE4QTr04hG9FHMYTt0',
-    appId: '1:649793624307:android:72a7955952ba567961bf86',
-    messagingSenderId: '649793624307',
-    projectId: 'covid-19-a71b8',
-    storageBucket: 'covid-19-a71b8.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD_JWvLNC1-X4BvAfSq0wIPXO706Q76gTk',
-    appId: '1:649793624307:ios:96c89b16e4cec8f061bf86',
-    messagingSenderId: '649793624307',
-    projectId: 'covid-19-a71b8',
-    storageBucket: 'covid-19-a71b8.appspot.com',
-    iosBundleId: 'com.example.covid19Trackingapp',
+    apiKey: 'AIzaSyCg0Sj52TDA__kYLpgBd2XJvAtAi9mUxEk',
+    appId: '1:788868817571:android:e67f0321b8cbb1f7b19516',
+    messagingSenderId: '788868817571',
+    projectId: 'covid-19-appliction',
+    storageBucket: 'covid-19-appliction.appspot.com',
   );
 }

@@ -1,13 +1,13 @@
+import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&signupButton.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
-import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
 import 'package:covid_19_trackingapp/controller/EmailPasswordValidationController/EmailPasswordValidationController.dart';
-import 'package:covid_19_trackingapp/view/Login/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../Reuseable Components/CustomButton/Login&signupButton.dart';
-import '../../controller/SignUpController/SignUpController.dart';
+import '../../Controller/SignUpController/SignUpController.dart';
+import '../../constants/fonts_size_constant/fonts_size_constant.dart';
+import '../login/login.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -32,7 +32,6 @@ class SignUp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Image(image: AssetImage("assets/images/shape.png")),
                 ],
               ),
@@ -68,7 +67,7 @@ class SignUp extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: Obx(
                     () => Form(
-                        key:signUpController.formKey,
+                        key: signUpController.formKey,
                         child: Column(
                           children: [
                             // Name TextFormField
@@ -215,7 +214,7 @@ class SignUp extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        Get.offAll(() => LoginPage());
+                        Get.offAll(() => Login());
                       },
                       child: FittedBox(
                         child: Text(

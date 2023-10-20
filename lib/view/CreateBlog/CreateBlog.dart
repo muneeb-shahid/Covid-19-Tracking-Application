@@ -31,7 +31,7 @@ class CreateBlog extends StatelessWidget {
           ElevatedButton(
               onPressed: () async {
                 await FirebaseAuth.instance.signOut();
-                Get.to(LoginPage());
+                Get.to(Login());
               },
               child: Text("signOut"))
         ],

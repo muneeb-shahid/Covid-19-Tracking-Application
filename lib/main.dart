@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: WriteArticles(),
+          home: HomeView(),
           // getPages: AppRoutes.appRoutes(),
         );
       },
