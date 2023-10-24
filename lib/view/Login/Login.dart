@@ -1,4 +1,6 @@
 import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&signupButton.dart';
+import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
+import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/controller/EmailPasswordValidationController/EmailPasswordValidationController.dart';
 import 'package:covid_19_trackingapp/controller/EmailVerificationController/EmailVerificationController.dart';
@@ -30,45 +32,54 @@ class Login extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: App_Constants_Colors.app_background_color,
+      appBar: AppBar(
+        title: TextHeading(
+            "Login to your account", App_Constants_Colors.app_white_color),
+        elevation: 0,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20)),
+        ),
+        backgroundColor: App_Constants_Colors.app_green_color,
+      ),
+      drawer: ReUseable_Drawer(),
       body: SafeArea(
         top: true,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Column(children: [
-                Center(
-                  child: Text(
-                    "Welcome Back!",
-                    style: TextStyle(
-                        fontFamily: App_Fonts_Constants.Philosopher,
-                        fontWeight: FontWeight.bold,
-                        color: App_Constants_Colors.app_black_color,
-                        fontSize: App_Fonts_Constants.heading_font_size.sp),
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: screenWidth * 0.05,
+            right: screenWidth * 0.05,
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Column(children: [
+                  SizedBox(
+                    height: heightt * 0.05,
                   ),
-                ),
-                SizedBox(
-                  height: heightt * 0.02,
-                ),
-                Center(
-                  child: Text(
-                    "Let’s help you meet your tasks",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: App_Fonts_Constants.Philosopher,
-                        fontWeight: FontWeight.bold,
-                        color: App_Constants_Colors.app_grey_color,
-                        fontSize: App_Fonts_Constants.text_font_size.sp),
+                  Center(
+                    child: Text(
+                      "Welcome Back!",
+                      style: TextStyle(
+                          fontFamily: App_Fonts_Constants.Philosopher,
+                          fontWeight: FontWeight.bold,
+                          color: App_Constants_Colors.app_black_color,
+                          fontSize: App_Fonts_Constants.heading_font_size.sp),
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: heightt * 0.05,
-                ),
-                SizedBox(
-                  height: heightt * 0.05,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Obx(
+                  SizedBox(
+                    height: heightt * 0.05,
+                  ),
+                  Lottie.asset(App_Images.login_signup,
+                      repeat: true, reverse: true
+                      ),
+                  SizedBox(
+                    height: heightt * 0.05,
+                  ),
+                  Obx(
                     () => Form(
                         key: loginController.formKey,
                         child: Column(
@@ -92,22 +103,22 @@ class Login extends StatelessWidget {
                                 hintText: 'Enter your email',
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide(
+                                  borderSide:const BorderSide(
                                     width: 2,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                   ),
                                 ),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        width: 2, color: Colors.white)),
+                                    borderSide:const BorderSide(
+                                        width: 2, color: Colors.black)),
                                 prefixIcon:
-                                    Icon(Icons.email, color: Colors.black),
+                                  const  Icon(Icons.email, color: Colors.black),
                               ),
                             ),
 
                             SizedBox(
-                              height: heightt * 0.03,
+                              height: heightt * 0.05,
                             ),
 
                             // Password TextFormField
@@ -125,14 +136,14 @@ class Login extends StatelessWidget {
                                 hintText: 'Enter your password',
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide(
+                                  borderSide:const BorderSide(
                                     width: 2,
                                     color: Colors.white,
                                   ),
                                 ),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
+                                    borderSide:const BorderSide(
                                         width: 2, color: Colors.white)),
                                 prefixIcon:
                                     Icon(Icons.password, color: Colors.black),
@@ -154,82 +165,57 @@ class Login extends StatelessWidget {
                           ],
                         )),
                   ),
-                ),
+               
+                 
+                  SizedBox(
+                    height: heightt * 0.07,
+                  ),
+                  customLogin_SignupButton(
+                      func: () => loginController.login(),
+                      innerColor: App_Constants_Colors.app_green_color,
+                      textColor: App_Constants_Colors.app_white_color,
+                      text: "Login")
+                ]),
                 SizedBox(
                   height: heightt * 0.02,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 30),
-                      child: InkWell(
-                        onTap: () {
-                          Get.to(ForgetPassword());
-                        },
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      FittedBox(
                         child: Text(
-                          "Forget password",
+                          "Don’t have an account ?",
                           style: TextStyle(
-                              fontFamily: App_Fonts_Constants.Philosopher,
-                              fontWeight: FontWeight.bold,
-                              color: App_Constants_Colors.app_grey_color,
-                              fontSize: App_Fonts_Constants.text_font_size.sp),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: heightt * 0.01,
-                ),
-                SizedBox(
-                  height: heightt * 0.03,
-                ),
-                customLogin_SignupButton(
-                    func: () => loginController.login(),
-                    innerColor: App_Constants_Colors.app_pink_color,
-                    textColor: App_Constants_Colors.app_white_color,
-                    text: "Login")
-              ]),
-              SizedBox(
-                height: heightt * 0.02,
-              ),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    FittedBox(
-                      child: Text(
-                        "Don’t have an account ?",
-                        style: TextStyle(
-                          color: App_Constants_Colors.app_black_color,
-                          fontSize: App_Fonts_Constants.text_font_size.sp,
-                          fontFamily: App_Fonts_Constants.Philosopher,
-                        ),
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Get.offAll(() => SignUp());
-                      },
-                      child: FittedBox(
-                        child: Text(
-                          "Sign Up",
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
                             color: App_Constants_Colors.app_black_color,
                             fontSize: App_Fonts_Constants.text_font_size.sp,
                             fontFamily: App_Fonts_Constants.Philosopher,
-                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              )
-            ],
+                      TextButton(
+                        onPressed: () {
+                          Get.offAll(() => SignUp());
+                        },
+                        child: FittedBox(
+                          child: Text(
+                            "Sign Up",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: App_Constants_Colors.app_black_color,
+                              fontSize: App_Fonts_Constants.text_font_size.sp,
+                              fontFamily: App_Fonts_Constants.Philosopher,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
