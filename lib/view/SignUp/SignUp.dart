@@ -1,9 +1,13 @@
+import 'package:covid_19_trackingapp/Images/images.dart';
 import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&signupButton.dart';
+import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
+import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/controller/EmailPasswordValidationController/EmailPasswordValidationController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../Controller/SignUpController/SignUpController.dart';
 import '../../constants/fonts_size_constant/fonts_size_constant.dart';
@@ -23,57 +27,61 @@ class SignUp extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: App_Constants_Colors.app_background_color,
+      appBar: AppBar(
+        title: TextHeading(
+            "Register your account", App_Constants_Colors.app_white_color),
+        elevation: 0,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20)),
+        ),
+        backgroundColor: App_Constants_Colors.app_green_color,
+      ),
+      drawer: ReUseable_Drawer(),
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image(image: AssetImage("assets/images/shape.png")),
-                ],
-              ),
-              Column(children: [
-                Center(
-                  child: Text(
-                    "Welcome onBoard!",
-                    style: TextStyle(
-                        fontFamily: App_Fonts_Constants.Philosopher,
-                        fontWeight: FontWeight.bold,
-                        color: App_Constants_Colors.app_black_color,
-                        fontSize: App_Fonts_Constants.heading_font_size.sp),
+          child: Padding(
+            padding: EdgeInsets.only(
+              left: screenWidth * 0.05,
+              right: screenWidth * 0.05,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Column(children: [
+                  SizedBox(
+                    height: heightt * 0.05,
                   ),
-                ),
-                SizedBox(
-                  height: heightt * 0.02,
-                ),
-                Center(
-                  child: Text(
-                    "Let’s help you meet your tasks",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: App_Fonts_Constants.Philosopher,
-                        fontWeight: FontWeight.bold,
-                        color: App_Constants_Colors.app_grey_color,
-                        fontSize: App_Fonts_Constants.text_font_size.sp),
+                  Center(
+                    child: Text(
+                      "Welcome onBoard!",
+                      style: TextStyle(
+                          fontFamily: App_Fonts_Constants.Philosopher,
+                          fontWeight: FontWeight.bold,
+                          color: App_Constants_Colors.app_black_color,
+                          fontSize: App_Fonts_Constants.heading_font_size.sp),
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: heightt * 0.05,
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Obx(
+                  SizedBox(
+                    height: heightt * 0.05,
+                  ),
+                  Lottie.asset(App_Images.login_signup,
+                      repeat: true, reverse: true),
+                  SizedBox(
+                    height: heightt * 0.05,
+                  ),
+                  Obx(
                     () => Form(
                         key: signUpController.formKey,
                         child: Column(
                           children: [
                             // Name TextFormField
                             TextFormField(
-                              controller: signUpController
-                                  .NameTextEditingController,
+                              controller:
+                                  signUpController.NameTextEditingController,
                               keyboardType: TextInputType.name,
                               focusNode: signUpController.focusNode1,
                               onFieldSubmitted: (value) {
@@ -89,17 +97,17 @@ class SignUp extends StatelessWidget {
                                 hintText: 'Enter your full name',
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     width: 2,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                   ),
                                 ),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        width: 2, color: Colors.white)),
-                                prefixIcon:
-                                    Icon(Icons.person_2, color: Colors.black),
+                                    borderSide: const BorderSide(
+                                        width: 2, color: Colors.black)),
+                                prefixIcon: const Icon(Icons.person_2,
+                                    color: Colors.black),
                               ),
                             ),
                             SizedBox(
@@ -123,17 +131,17 @@ class SignUp extends StatelessWidget {
                                 hintText: 'Enter your email',
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     width: 2,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                   ),
                                 ),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        width: 2, color: Colors.white)),
-                                prefixIcon:
-                                    Icon(Icons.email, color: Colors.black),
+                                    borderSide: const BorderSide(
+                                        width: 2, color: Colors.black)),
+                                prefixIcon: const Icon(Icons.email,
+                                    color: Colors.black),
                               ),
                             ),
                             SizedBox(
@@ -155,17 +163,17 @@ class SignUp extends StatelessWidget {
                                 hintText: 'Enter your password',
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     width: 2,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                   ),
                                 ),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
-                                        width: 2, color: Colors.white)),
-                                prefixIcon:
-                                    Icon(Icons.password, color: Colors.black),
+                                    borderSide: const BorderSide(
+                                        width: 2, color: Colors.black)),
+                                prefixIcon: const Icon(Icons.password,
+                                    color: Colors.black),
                                 suffixIconColor:
                                     App_Constants_Colors.app_black_color,
                                 suffixIcon: GestureDetector(
@@ -184,56 +192,55 @@ class SignUp extends StatelessWidget {
                           ],
                         )),
                   ),
-                ),
+                  SizedBox(
+                    height: heightt * 0.05,
+                  ),
+                  customLogin_SignupButton(
+                      func: () => signUpController.register(),
+                      innerColor: App_Constants_Colors.app_green_color,
+                      textColor: App_Constants_Colors.app_white_color,
+                      text: "Register")
+                ]),
                 SizedBox(
-                  height: heightt * 0.05,
+                  height: heightt * 0.02,
                 ),
-                customLogin_SignupButton(
-                    func: () => signUpController.register(),
-                    innerColor: App_Constants_Colors.app_pink_color,
-                    textColor: App_Constants_Colors.app_white_color,
-                    text: "Register")
-              ]),
-              SizedBox(
-                height: heightt * 0.02,
-              ),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    FittedBox(
-                      child: Text(
-                        "Already have an account?",
-                        style: TextStyle(
-                          color: App_Constants_Colors.app_black_color,
-                          fontSize: App_Fonts_Constants.text_font_size.sp,
-                          fontFamily: App_Fonts_Constants.Philosopher,
-                        ),
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Get.offAll(() => Login());
-                      },
-                      child: FittedBox(
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      FittedBox(
                         child: Text(
-                          "Log In",
+                          "Already have an account?",
                           style: TextStyle(
-                            decoration: TextDecoration.underline,
                             color: App_Constants_Colors.app_black_color,
                             fontSize: App_Fonts_Constants.text_font_size.sp,
-                            fontFamily:
-                                App_Fonts_Constants.Philosopher,
-                            fontWeight: FontWeight.bold,
+                            fontFamily: App_Fonts_Constants.Philosopher,
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              )
-            ],
+                      TextButton(
+                        onPressed: () {
+                          Get.offAll(() => Login());
+                        },
+                        child: FittedBox(
+                          child: Text(
+                            "Log In",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: App_Constants_Colors.app_black_color,
+                              fontSize: App_Fonts_Constants.text_font_size.sp,
+                              fontFamily: App_Fonts_Constants.Philosopher,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

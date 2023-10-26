@@ -138,13 +138,13 @@ class Login extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(30),
                                   borderSide:const BorderSide(
                                     width: 2,
-                                    color: Colors.white,
+                                    color: Colors.black,
                                   ),
                                 ),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
                                     borderSide:const BorderSide(
-                                        width: 2, color: Colors.white)),
+                                        width: 2, color: Colors.black)),
                                 prefixIcon:
                                     Icon(Icons.password, color: Colors.black),
                                 suffixIconColor:

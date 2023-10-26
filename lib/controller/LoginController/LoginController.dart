@@ -38,7 +38,7 @@ class LoginController extends GetxController {
         print('User Successfully login.');
          Get.snackbar(
               'Welcome Back',
-              "User Successfully login",
+              "Successfully login",
               icon: const Icon(Icons.error_outline, color: Colors.black),
               backgroundColor: App_Constants_Colors.app_white_color,
               colorText: Colors.black,
