@@ -22,6 +22,8 @@ class CreateBlog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // String imageURL = "";
+
     CreateBlogController _CreateBlogController =
         Get.put(CreateBlogController());
     return Scaffold(
@@ -62,32 +64,33 @@ class CreateBlog extends StatelessWidget {
                       ),
                       child: IconButton(
                           onPressed: () async {
-                            String imageURL = "";
-                            ;
-                            final ImagePicker picker = ImagePicker();
+                            _CreateBlogController.uploadingImage();
+                            // // String imageURL = "";
 
-                            final XFile? image = await picker.pickImage(
-                                source: ImageSource.gallery);
+                            // final ImagePicker picker = ImagePicker();
 
-                            print(image?.path);
-                            if (image == null) return;
+                            // final XFile? image = await picker.pickImage(
+                            //     source: ImageSource.gallery);
 
-                            String UniqueFileName = DateTime.now()
-                                .millisecondsSinceEpoch
-                                .toString();
-                            final storageRef = FirebaseStorage.instance.ref();
+                            // print(image?.path);
+                            // if (image == null) return;
 
-                            final storageRefImages = storageRef.child("images");
+                            // String UniqueFileName = DateTime.now()
+                            //     .millisecondsSinceEpoch
+                            //     .toString();
+                            // final storageRef = FirebaseStorage.instance.ref();
 
-                            final storageRefImagesToUpload =
-                                storageRefImages.child(UniqueFileName);
+                            // final storageRefImages = storageRef.child("images");
 
-                            try {
-                              await storageRefImagesToUpload
-                                  .putFile(File(image!.path));
-                              imageURL = await storageRefImagesToUpload
-                                  .getDownloadURL();
-                            } catch (e) {}
+                            // final storageRefImagesToUpload =
+                            //     storageRefImages.child(UniqueFileName);
+
+                            // try {
+                            //   await storageRefImagesToUpload
+                            //       .putFile(File(image!.path));
+                            //   String imageURL = await storageRefImagesToUpload
+                            //       .getDownloadURL();
+                            // } catch (e) {}
                           },
                           icon: const Icon(
                             Icons.camera_alt_outlined,
@@ -104,7 +107,7 @@ class CreateBlog extends StatelessWidget {
                       children: [
                         TextFormField(
                             controller: _CreateBlogController.titleController,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.black,
                             ),
                             validator: _CreateBlogController.validateTitle,
@@ -113,7 +116,7 @@ class CreateBlog extends StatelessWidget {
                                   borderSide: BorderSide(
                                       color: App_Constants_Colors
                                           .app_black_color)),
-                              hintText: 'Write a title of blog...',
+                              hintText: 'Write a title of article...',
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5),
                                 borderSide: BorderSide(
@@ -127,7 +130,7 @@ class CreateBlog extends StatelessWidget {
                         ),
                         TextFormField(
                             controller: _CreateBlogController.contentController,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.black,
                             ),
                             validator: _CreateBlogController.validateContent,
@@ -137,7 +140,7 @@ class CreateBlog extends StatelessWidget {
                                   borderSide: BorderSide(
                                       color: App_Constants_Colors
                                           .app_black_color)),
-                              hintText: 'Write a blog content...',
+                              hintText: 'Write a article content...',
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5),
                                 borderSide: BorderSide(
