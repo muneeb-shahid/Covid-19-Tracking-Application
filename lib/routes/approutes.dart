@@ -7,12 +7,12 @@ class AppRoutes {
   static appRoutes() => [
         GetPage(
           name: RoutesName.OnBoardingScreen,
-          page: () => OnBoardingScreen(),
+          page: () => const OnBoardingScreen(),
         ),
 
         GetPage(
           name: RoutesName.HomeView,
-          page: () => HomeView(),
+          page: () => const HomeView(),
         ),
         // GetPage(name: RoutesName.SignUp, page: () => SignUp()),
         // GetPage(

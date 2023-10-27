@@ -44,67 +44,67 @@ class WorldStatesModel {
       double? criticalPerOneMillion,
       int? affectedCountries}) {
     if (updated != null) {
-      this._updated = updated;
+      _updated = updated;
     }
     if (cases != null) {
-      this._cases = cases;
+      _cases = cases;
     }
     if (todayCases != null) {
-      this._todayCases = todayCases;
+      _todayCases = todayCases;
     }
     if (deaths != null) {
-      this._deaths = deaths;
+      _deaths = deaths;
     }
     if (todayDeaths != null) {
-      this._todayDeaths = todayDeaths;
+      _todayDeaths = todayDeaths;
     }
     if (recovered != null) {
-      this._recovered = recovered;
+      _recovered = recovered;
     }
     if (todayRecovered != null) {
-      this._todayRecovered = todayRecovered;
+      _todayRecovered = todayRecovered;
     }
     if (active != null) {
-      this._active = active;
+      _active = active;
     }
     if (critical != null) {
-      this._critical = critical;
+      _critical = critical;
     }
     if (casesPerOneMillion != null) {
-      this._casesPerOneMillion = casesPerOneMillion;
+      _casesPerOneMillion = casesPerOneMillion;
     }
     if (deathsPerOneMillion != null) {
-      this._deathsPerOneMillion = deathsPerOneMillion;
+      _deathsPerOneMillion = deathsPerOneMillion;
     }
     if (tests != null) {
-      this._tests = tests;
+      _tests = tests;
     }
     if (testsPerOneMillion != null) {
-      this._testsPerOneMillion = testsPerOneMillion;
+      _testsPerOneMillion = testsPerOneMillion;
     }
     if (population != null) {
-      this._population = population;
+      _population = population;
     }
     if (oneCasePerPeople != null) {
-      this._oneCasePerPeople = oneCasePerPeople;
+      _oneCasePerPeople = oneCasePerPeople;
     }
     if (oneDeathPerPeople != null) {
-      this._oneDeathPerPeople = oneDeathPerPeople;
+      _oneDeathPerPeople = oneDeathPerPeople;
     }
     if (oneTestPerPeople != null) {
-      this._oneTestPerPeople = oneTestPerPeople;
+      _oneTestPerPeople = oneTestPerPeople;
     }
     if (activePerOneMillion != null) {
-      this._activePerOneMillion = activePerOneMillion;
+      _activePerOneMillion = activePerOneMillion;
     }
     if (recoveredPerOneMillion != null) {
-      this._recoveredPerOneMillion = recoveredPerOneMillion;
+      _recoveredPerOneMillion = recoveredPerOneMillion;
     }
     if (criticalPerOneMillion != null) {
-      this._criticalPerOneMillion = criticalPerOneMillion;
+      _criticalPerOneMillion = criticalPerOneMillion;
     }
     if (affectedCountries != null) {
-      this._affectedCountries = affectedCountries;
+      _affectedCountries = affectedCountries;
     }
   }
 
@@ -186,28 +186,28 @@ class WorldStatesModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['updated'] = this._updated;
-    data['cases'] = this._cases;
-    data['todayCases'] = this._todayCases;
-    data['deaths'] = this._deaths;
-    data['todayDeaths'] = this._todayDeaths;
-    data['recovered'] = this._recovered;
-    data['todayRecovered'] = this._todayRecovered;
-    data['active'] = this._active;
-    data['critical'] = this._critical;
-    data['casesPerOneMillion'] = this._casesPerOneMillion;
-    data['deathsPerOneMillion'] = this._deathsPerOneMillion;
-    data['tests'] = this._tests;
-    data['testsPerOneMillion'] = this._testsPerOneMillion;
-    data['population'] = this._population;
-    data['oneCasePerPeople'] = this._oneCasePerPeople;
-    data['oneDeathPerPeople'] = this._oneDeathPerPeople;
-    data['oneTestPerPeople'] = this._oneTestPerPeople;
-    data['activePerOneMillion'] = this._activePerOneMillion;
-    data['recoveredPerOneMillion'] = this._recoveredPerOneMillion;
-    data['criticalPerOneMillion'] = this._criticalPerOneMillion;
-    data['affectedCountries'] = this._affectedCountries;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['updated'] = _updated;
+    data['cases'] = _cases;
+    data['todayCases'] = _todayCases;
+    data['deaths'] = _deaths;
+    data['todayDeaths'] = _todayDeaths;
+    data['recovered'] = _recovered;
+    data['todayRecovered'] = _todayRecovered;
+    data['active'] = _active;
+    data['critical'] = _critical;
+    data['casesPerOneMillion'] = _casesPerOneMillion;
+    data['deathsPerOneMillion'] = _deathsPerOneMillion;
+    data['tests'] = _tests;
+    data['testsPerOneMillion'] = _testsPerOneMillion;
+    data['population'] = _population;
+    data['oneCasePerPeople'] = _oneCasePerPeople;
+    data['oneDeathPerPeople'] = _oneDeathPerPeople;
+    data['oneTestPerPeople'] = _oneTestPerPeople;
+    data['activePerOneMillion'] = _activePerOneMillion;
+    data['recoveredPerOneMillion'] = _recoveredPerOneMillion;
+    data['criticalPerOneMillion'] = _criticalPerOneMillion;
+    data['affectedCountries'] = _affectedCountries;
     return data;
   }
 }

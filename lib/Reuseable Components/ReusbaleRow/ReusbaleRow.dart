@@ -1,6 +1,5 @@
 import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
-import 'package:covid_19_trackingapp/constants/TextParagraph/TextParagraph.dart';
 import 'package:flutter/material.dart';
 
 Widget ReusbaleRow(text, color, num, color1) {

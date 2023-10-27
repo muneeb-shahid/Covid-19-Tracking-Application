@@ -1,35 +1,23 @@
-import 'dart:io';
-
 import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&signupButton.dart';
 import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/controller/CreateBlogController/CreateBlogController.dart';
-import 'package:covid_19_trackingapp/view/Login/Login.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
-import 'package:image_picker/image_picker.dart';
 
 class CreateBlog extends StatelessWidget {
   const CreateBlog({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // String imageURL = "";
 
-    CreateBlogController _CreateBlogController =
+    CreateBlogController createBlogController =
         Get.put(CreateBlogController());
     return Scaffold(
       appBar: AppBar(
-        title:
-            TextHeading("Create a Blog", App_Constants_Colors.app_white_color),
+        title: TextHeading(
+            "Create an article", App_Constants_Colors.app_white_color),
         elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -64,33 +52,7 @@ class CreateBlog extends StatelessWidget {
                       ),
                       child: IconButton(
                           onPressed: () async {
-                            _CreateBlogController.uploadingImage();
-                            // // String imageURL = "";
-
-                            // final ImagePicker picker = ImagePicker();
-
-                            // final XFile? image = await picker.pickImage(
-                            //     source: ImageSource.gallery);
-
-                            // print(image?.path);
-                            // if (image == null) return;
-
-                            // String UniqueFileName = DateTime.now()
-                            //     .millisecondsSinceEpoch
-                            //     .toString();
-                            // final storageRef = FirebaseStorage.instance.ref();
-
-                            // final storageRefImages = storageRef.child("images");
-
-                            // final storageRefImagesToUpload =
-                            //     storageRefImages.child(UniqueFileName);
-
-                            // try {
-                            //   await storageRefImagesToUpload
-                            //       .putFile(File(image!.path));
-                            //   String imageURL = await storageRefImagesToUpload
-                            //       .getDownloadURL();
-                            // } catch (e) {}
+                            createBlogController.uploadingImage();
                           },
                           icon: const Icon(
                             Icons.camera_alt_outlined,
@@ -102,15 +64,15 @@ class CreateBlog extends StatelessWidget {
                     height: screenHeight * 0.05,
                   ),
                   Form(
-                    key: _CreateBlogController.formKey,
+                    key: createBlogController.formKey,
                     child: Column(
                       children: [
                         TextFormField(
-                            controller: _CreateBlogController.titleController,
+                            controller: createBlogController.titleController,
                             style: const TextStyle(
                               color: Colors.black,
                             ),
-                            validator: _CreateBlogController.validateTitle,
+                            validator: createBlogController.validateTitle,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -129,11 +91,11 @@ class CreateBlog extends StatelessWidget {
                           height: screenHeight * 0.03,
                         ),
                         TextFormField(
-                            controller: _CreateBlogController.contentController,
+                            controller: createBlogController.contentController,
                             style: const TextStyle(
                               color: Colors.black,
                             ),
-                            validator: _CreateBlogController.validateContent,
+                            validator: createBlogController.validateContent,
                             maxLines: 4,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -159,7 +121,7 @@ class CreateBlog extends StatelessWidget {
                       innerColor: App_Constants_Colors.app_green_color,
                       textColor: App_Constants_Colors.app_white_color,
                       text: "Publish",
-                      func: () => _CreateBlogController.publish()),
+                      func: () => createBlogController.publish()),
                 ],
               ),
             ),

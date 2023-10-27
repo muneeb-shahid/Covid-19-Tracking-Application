@@ -17,7 +17,7 @@ class TotalView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    StatesServices _statesServices = Get.put(StatesServices());
+    StatesServices statesServices = Get.put(StatesServices());
     TotalController totalController = Get.put(TotalController());
     return Scaffold(
         backgroundColor: App_Constants_Colors.app_background_color,
@@ -30,7 +30,7 @@ class TotalView extends StatelessWidget {
                 height: screenHeight * 0.03,
               ),
                 FutureBuilder(
-                  future: _statesServices.fetchWorldStatesRecord(),
+                  future: statesServices.fetchWorldStatesRecord(),
                   builder: (context, AsyncSnapshot<WorldStatesModel> snapshot) {
                     if (!snapshot.hasData) {
                       return Center(

@@ -1,7 +1,6 @@
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/view/CreateBlog/CreateBlog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +8,7 @@ class LoginController extends GetxController {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   get formKey => _formKey;
 
-  bool _loading = false;
+  final bool _loading = false;
   get loading => _loading;
 
   final TextEditingController _login_EmailTextEditingController =
@@ -20,9 +19,9 @@ class LoginController extends GetxController {
       TextEditingController();
   get login_password => _login_PasswordTextEditingController;
 
-  FocusNode _focusNode1 = FocusNode();
+  final FocusNode _focusNode1 = FocusNode();
   get focusNode1 => _focusNode1;
-  FocusNode _focusNode2 = FocusNode();
+  final FocusNode _focusNode2 = FocusNode();
   get focusNode2 => _focusNode2;
 
   login() async {

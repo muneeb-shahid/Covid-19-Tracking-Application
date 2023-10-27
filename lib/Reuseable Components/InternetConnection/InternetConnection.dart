@@ -1,7 +1,5 @@
-import 'dart:ffi';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:covid_19_trackingapp/routes/approutes.dart';
 import 'package:flutter/material.dart';
 
 // class InternetConnectionWidget extends StatelessWidget {
@@ -61,9 +59,6 @@ import 'package:flutter/material.dart';
 
 import 'dart:math';
 
-import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 
 class CheckInternetConnectionWidget extends StatelessWidget {
@@ -82,7 +77,7 @@ class CheckInternetConnectionWidget extends StatelessWidget {
         final state = snapshot.data!;
         switch (state) {
           case ConnectivityResult.none:
-            return Center(child: const Text('Not connected',style: TextStyle(fontSize: 22,color: Colors.red),));
+            return const Center(child: Text('Not connected',style: TextStyle(fontSize: 22,color: Colors.red),));
           default:
             return  widget;
         }
@@ -106,7 +101,7 @@ class InternetConnectivityScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Internet Connectivity'),
+        title: const Text('Internet Connectivity'),
       ),
       body: SafeArea(
         child: StreamBuilder<ConnectivityResult>(

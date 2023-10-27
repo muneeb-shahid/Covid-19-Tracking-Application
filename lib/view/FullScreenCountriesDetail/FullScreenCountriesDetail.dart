@@ -17,7 +17,7 @@ class FullScreenCountriesDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FullScreenCountriesDetailController _fullScreenCountriesDetailController =
+    FullScreenCountriesDetailController fullScreenCountriesDetailController =
         Get.put(FullScreenCountriesDetailController());
     return Scaffold(
       backgroundColor: App_Constants_Colors.app_background_color,
@@ -154,7 +154,7 @@ class FullScreenCountriesDetail extends StatelessWidget {
                           animationDuration: const Duration(milliseconds: 1500),
                           chartRadius: MediaQuery.of(context).size.width / 3.2,
                           colorList:
-                              _fullScreenCountriesDetailController.colorList,
+                              fullScreenCountriesDetailController.colorList,
                           chartType: ChartType.ring,
                           ringStrokeWidth: 15,
                           centerText: data["country"],

@@ -1,4 +1,3 @@
-import 'package:covid_19_trackingapp/Images/images.dart';
 import 'package:covid_19_trackingapp/constants/TextParagraph/TextParagraph.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:flutter/material.dart';

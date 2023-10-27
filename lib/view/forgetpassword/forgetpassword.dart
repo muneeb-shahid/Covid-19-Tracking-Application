@@ -6,9 +6,7 @@ import 'package:covid_19_trackingapp/controller/ForgetPasswordController/ForgetP
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
-import '../../images/images.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
@@ -28,7 +26,7 @@ class ForgetPassword extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -94,17 +92,17 @@ class ForgetPassword extends StatelessWidget {
                                       'Enter your email to reset password',
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       width: 2,
                                       color: Colors.white,
                                     ),
                                   ),
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(30),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                           width: 2, color: Colors.white)),
                                   prefixIcon:
-                                      Icon(Icons.email, color: Colors.black),
+                                      const Icon(Icons.email, color: Colors.black),
                                 ),
                               ),
                             ],

@@ -3,7 +3,6 @@ import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/R
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/controller/EmailPasswordValidationController/EmailPasswordValidationController.dart';
-import 'package:covid_19_trackingapp/controller/EmailVerificationController/EmailVerificationController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,7 +12,6 @@ import '../../Controller/LoginController/LoginController.dart';
 import '../../Controller/SignUpController/SignUpController.dart';
 import '../../constants/fonts_size_constant/fonts_size_constant.dart';
 import '../../images/images.dart';
-import '../forgetpassword/forgetpassword.dart';
 import '../signUp/signUp.dart';
 
 class Login extends StatelessWidget {
@@ -146,7 +144,7 @@ class Login extends StatelessWidget {
                                     borderSide:const BorderSide(
                                         width: 2, color: Colors.black)),
                                 prefixIcon:
-                                    Icon(Icons.password, color: Colors.black),
+                                    const Icon(Icons.password, color: Colors.black),
                                 suffixIconColor:
                                     App_Constants_Colors.app_black_color,
                                 suffixIcon: GestureDetector(
@@ -196,7 +194,7 @@ class Login extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Get.offAll(() => SignUp());
+                          Get.offAll(() => const SignUp());
                         },
                         child: FittedBox(
                           child: Text(

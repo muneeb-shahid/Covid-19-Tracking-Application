@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
-import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -13,10 +13,10 @@ class CreateBlogController extends GetxController {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   get formKey => _formKey;
 
-  TextEditingController _titleController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
   get titleController => _titleController;
 
-  TextEditingController _contentController = TextEditingController();
+  final TextEditingController _contentController = TextEditingController();
   get contentController => _contentController;
   final databaseRef = FirebaseDatabase.instance.ref("Article");
 
@@ -69,24 +69,27 @@ class CreateBlogController extends GetxController {
     final storageRefImagesToUpload = storageRefImages.child(UniqueFileName);
 
     try {
-      await storageRefImagesToUpload.putFile(File(image!.path));
+      await storageRefImagesToUpload.putFile(File(image.path));
       imageURL = await storageRefImagesToUpload.getDownloadURL();
-    } catch (e) {}
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
   }
 
   publish() {
-    if (formKey.currentState!.validate()) {
-      // if (image.isEmpty) {
-      //   Get.snackbar(
-      //     "Error",
-      //     'Please upload an image',
-      //     icon: const Icon(Icons.error, color: Colors.black),
-      //     backgroundColor: App_Constants_Colors.app_white_color,
-      //     colorText: Colors.black,
-      //     snackPosition: SnackPosition.TOP,
-      //   );
-      //   return;
-      // }
+    if (imageURL.isEmpty) {
+      Get.snackbar(
+        "Error",
+        'Please upload an image',
+        icon: const Icon(Icons.error, color: Colors.black),
+        backgroundColor: App_Constants_Colors.app_white_color,
+        colorText: Colors.black,
+        snackPosition: SnackPosition.TOP,
+      );
+      return;
+    } else if (formKey.currentState!.validate()) {
       final now = DateTime.now();
       final dateFormat = DateFormat('yyyy-MM-dd');
       final formattedDate = dateFormat.format(now);

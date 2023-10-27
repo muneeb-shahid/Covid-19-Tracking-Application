@@ -15,10 +15,10 @@ class StatisticsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    StatisticsViewController _statisticsViewController =
+    StatisticsViewController statisticsViewController =
         Get.put(StatisticsViewController());
     return DefaultTabController(
-        length: _statisticsViewController.tabs.length,
+        length: statisticsViewController.tabs.length,
         child: 
         Scaffold(
           appBar: AppBar(
@@ -41,7 +41,7 @@ class StatisticsView extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: App_Constants_Colors.app_white_color),
               indicatorColor: App_Constants_Colors.app_white_color,
-              tabs: _statisticsViewController.tabs,
+              tabs: statisticsViewController.tabs,
             ),
           ),
           drawer: ReUseable_Drawer(),

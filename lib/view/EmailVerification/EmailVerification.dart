@@ -7,10 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import 'package:lottie/lottie.dart';
 
 import '../../Controller/EmailVerificationController/EmailVerificationController.dart';
-import '../../images/images.dart';
 
 
 class EmailVerification extends StatelessWidget {
@@ -23,7 +21,7 @@ class EmailVerification extends StatelessWidget {
   @override
   Widget build(BuildContext context) => emailVerificationController
           .isEmailVerified
-      ? CreateBlog()
+      ? const CreateBlog()
       : Scaffold(
           backgroundColor: App_Constants_Colors.app_background_color,
           body: SafeArea(
@@ -38,7 +36,7 @@ class EmailVerification extends StatelessWidget {
                       children: [
                         FittedBox(
                           child: Text(
-                            'A verification email has been sent to \n\n${user}',
+                            'A verification email has been sent to \n\n$user',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontFamily:

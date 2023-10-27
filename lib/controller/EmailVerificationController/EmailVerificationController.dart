@@ -20,7 +20,7 @@ class EmailVerificationController extends GetxController {
 
   signOut() async {
     await FirebaseAuth.instance.signOut();
-    Get.offAll(Login());
+    Get.offAll(const Login());
   }
 
   sendEmailVerificationCode() async {
@@ -48,7 +48,7 @@ class EmailVerificationController extends GetxController {
 
     if (!_isEmailVerified) {
       sendEmailVerificationCode();
-      timer = Timer.periodic(Duration(seconds: 3), (timer) {
+      timer = Timer.periodic(const Duration(seconds: 3), (timer) {
         checkEmailVerified();
       });
     }
@@ -68,7 +68,7 @@ class EmailVerificationController extends GetxController {
     _isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified;
 
     if (isEmailVerified) {
-      Get.offAll(CreateBlog());
+      Get.offAll(const CreateBlog());
       timer?.cancel();
     }
   }

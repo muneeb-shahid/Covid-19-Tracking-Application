@@ -1,5 +1,3 @@
-import 'package:covid_19_trackingapp/view/Statistics/Countries/Countries.dart';
-import 'package:covid_19_trackingapp/view/Statistics/Total/Total.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';

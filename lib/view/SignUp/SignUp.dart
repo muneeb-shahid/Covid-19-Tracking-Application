@@ -221,7 +221,7 @@ class SignUp extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Get.offAll(() => Login());
+                          Get.offAll(() => const Login());
                         },
                         child: FittedBox(
                           child: Text(

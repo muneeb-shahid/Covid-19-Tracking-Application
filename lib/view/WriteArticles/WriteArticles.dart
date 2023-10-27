@@ -110,7 +110,7 @@ class WriteArticles extends StatelessWidget {
                 height: screenHeight * 0.03,
               ),
               customButton(
-                  nextscreen: Login(),
+                  nextscreen: const Login(),
                   innerColor: App_Constants_Colors.app_green_color,
                   textColor: App_Constants_Colors.app_white_color,
                   text: "Go to Login Page")

@@ -14,7 +14,7 @@ class CountriesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    StatesServices _statesServices = Get.put(StatesServices());
+    StatesServices statesServices = Get.put(StatesServices());
     CountriesViewController countriesViewController =
         Get.put(CountriesViewController());
     return Scaffold(
@@ -70,7 +70,7 @@ class CountriesView extends StatelessWidget {
                     height: screenHeight * 0.01,
                   ),
                   FutureBuilder(
-                    future: _statesServices.fetchCountriesModel(),
+                    future: statesServices.fetchCountriesModel(),
                     builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
                       if (!snapshot.hasData) {
                         return Expanded(

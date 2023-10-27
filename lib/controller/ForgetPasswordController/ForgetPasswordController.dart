@@ -6,7 +6,7 @@ import '../../View/login/login.dart';
 import '../../constants/colors_constants/colors_constants.dart';
 
 class ForgetPasswordController extends GetxController {
-  FocusNode _focusNode1 = FocusNode();
+  final FocusNode _focusNode1 = FocusNode();
   get focusNode1 => _focusNode1;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   get formKey => _formKey;
@@ -23,7 +23,7 @@ class ForgetPasswordController extends GetxController {
         await FirebaseAuth.instance.sendPasswordResetEmail(
 
             email: _forget_EmailTextEditingController.text.trim());
-        Get.offAll(Login());
+        Get.offAll(const Login());
 
         Get.snackbar(
           'Reset Password',
