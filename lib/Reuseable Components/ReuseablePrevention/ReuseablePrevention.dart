@@ -51,36 +51,3 @@ Widget buildPreventionCard({required PreventionModel list_PreventionModel}) =>
       ),
     );
 
-//  Card(
-//     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-//     elevation: 10,
-//     shadowColor: Colors.white,
-//     child: Column(
-//       mainAxisAlignment: MainAxisAlignment.center,
-//       crossAxisAlignment: CrossAxisAlignment.center,
-//       children: [
-//         Row(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           crossAxisAlignment: CrossAxisAlignment.center,
-//           children: [
-//             Image.asset(
-//               list_PreventionModel.image,
-//               // height: screenHeight * 0.15,
-//               // width: screenWidth * 0.3,
-//             ),
-//           ],
-//         ),
-//         SizedBox(
-//           height: screenHeight * 0.03,
-//         ),
-//         Row(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           crossAxisAlignment: CrossAxisAlignment.center,
-//           children: [
-//             TextHeading(list_PreventionModel.title,
-//                 App_Constants_Colors.app_black_color),
-//           ],
-//         ),
-//       ],
-//     ),
-//   );

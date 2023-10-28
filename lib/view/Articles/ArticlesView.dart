@@ -36,7 +36,9 @@ class ArticlesView extends StatelessWidget {
           left: screenWidth * 0.02,
           right: screenWidth * 0.02,
         ),
-        child: StreamBuilder(
+        child: 
+        
+        StreamBuilder(
           stream: ref.onValue,
           builder: (context, AsyncSnapshot<DatabaseEvent> snapshot) {
             try {
@@ -181,6 +183,7 @@ class ArticlesView extends StatelessWidget {
             );
           },
         ),
+   
       ),
     );
   }

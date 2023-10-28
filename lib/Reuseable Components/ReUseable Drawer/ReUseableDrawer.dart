@@ -14,12 +14,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 ReUseable_Drawer() {
-  return Drawer(
+  return 
+  
+  Drawer(
       backgroundColor: App_Constants_Colors.app_green_color,
       child: ListView(
         children: [
-          SizedBox(height: screenHeight*0.04,)
-,          Image.asset(
+          SizedBox(
+            height: screenHeight * 0.04,
+          ),
+          Image.asset(
             App_Images.Drawer_logo,
             height: screenHeight * 0.2,
           ),
@@ -129,7 +133,7 @@ ReUseable_Drawer() {
           GestureDetector(
               onTap: () => Get.back(),
               child: Container(
-                height: screenHeight*0.2,
+                height: screenHeight * 0.2,
                 decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     borderRadius: const BorderRadius.only(
@@ -142,7 +146,6 @@ ReUseable_Drawer() {
                   color: App_Constants_Colors.app_white_color,
                 ),
               )),
-             
         ],
       ));
 }

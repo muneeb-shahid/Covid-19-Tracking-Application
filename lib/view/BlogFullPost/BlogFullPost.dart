@@ -1,6 +1,4 @@
 import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&signupButton.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +48,6 @@ class BlogFullPost extends StatelessWidget {
               ),
               Image.network(
                 width: double.infinity,
-                height: screenHeight * 0.2,
                 blogData["image"].toString(),
                 fit: BoxFit.cover,
               ),
