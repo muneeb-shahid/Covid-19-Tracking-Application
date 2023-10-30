@@ -3,6 +3,8 @@ import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/R
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/controller/CreateBlogController/CreateBlogController.dart';
+import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,6 +27,14 @@ class CreateBlog extends StatelessWidget {
               bottomRight: Radius.circular(20)),
         ),
         backgroundColor: App_Constants_Colors.app_green_color,
+        actions: [
+          IconButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                Get.offAll(() => HomeView());
+              },
+              icon: Icon(Icons.login_outlined)),
+        ],
       ),
       drawer: ReUseable_Drawer(),
       body: SafeArea(

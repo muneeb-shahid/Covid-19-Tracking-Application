@@ -9,6 +9,8 @@ import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
 import 'package:covid_19_trackingapp/view/Statistics/StatisticsView.dart';
 import 'package:covid_19_trackingapp/view/Symptoms/SymptomsView.dart';
 import 'package:covid_19_trackingapp/view/WriteArticles/WriteArticles.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -160,11 +162,12 @@ ReUseable_Drawer() {
               SizedBox(
                 height: screenHeight * 0.03,
               ),
+            
               Positioned(
                 child: GestureDetector(
                     onTap: () => Get.back(),
                     child: Container(
-                      height: screenHeight*0.2,
+                      height: screenHeight * 0.2,
                       decoration: BoxDecoration(
                           shape: BoxShape.rectangle,
                           borderRadius: const BorderRadius.only(

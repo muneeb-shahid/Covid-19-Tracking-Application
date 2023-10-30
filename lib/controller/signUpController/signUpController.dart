@@ -1,11 +1,9 @@
-
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
+import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
 import 'package:covid_19_trackingapp/view/Login/Login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../View/EmailVerification/EmailVerification.dart';
 
 
 class SignUpController extends GetxController {
@@ -61,10 +59,9 @@ class SignUpController extends GetxController {
         _emailTextEditingController.clear();
         _passwordTextEditingController.clear();
 
-        Get.to(EmailVerification());
-      } 
-      
-      on FirebaseAuthException catch (e) {
+        Get.to(()=>HomeView());
+
+      } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
           print('The password provided is too weak.');
         } else if (e.code == 'email-already-in-use') {
@@ -81,8 +78,7 @@ class SignUpController extends GetxController {
           );
           Get.to(const Login());
         }
-      } 
-      catch (e) {
+      } catch (e) {
         print(e);
         Get.snackbar(
           'Error!', //Snackbar title

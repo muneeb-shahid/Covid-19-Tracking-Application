@@ -1,7 +1,10 @@
+import 'package:covid_19_trackingapp/controller/MyAppController/MyAppController.dart';
 import 'package:covid_19_trackingapp/dependency_injection.dart';
 import 'package:covid_19_trackingapp/routes/approutes.dart';
 import 'package:covid_19_trackingapp/view/Articles/ArticlesView.dart';
+import 'package:covid_19_trackingapp/view/CreateBlog/CreateBlog.dart';
 import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
+import 'package:covid_19_trackingapp/view/OnBoardingScreen/OnBoardingScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -23,6 +26,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MyAppController appController = Get.put(MyAppController());
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,
@@ -34,8 +38,9 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          // home: InternetConnectivityScreen()
           getPages: AppRoutes.appRoutes(),
+          // home: CreateBlog(),
+          // home: appController.user != null ? HomeView() : OnBoardingScreen(),
         );
       },
     );

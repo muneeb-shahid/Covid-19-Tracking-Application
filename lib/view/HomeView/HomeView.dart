@@ -1,6 +1,8 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
 import 'package:covid_19_trackingapp/Reuseable%20Components/ReuseablePrevention/ReuseablePrevention.dart';
 import 'package:covid_19_trackingapp/view/BlogFullPost/BlogFullPost.dart';
+import 'package:covid_19_trackingapp/view/OnBoardingScreen/OnBoardingScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
@@ -34,6 +36,7 @@ class HomeView extends StatelessWidget {
         title: TextHeading("Home", App_Constants_Colors.app_white_color),
         elevation: 0,
         backgroundColor: App_Constants_Colors.app_green_color,
+        
       ),
       drawer: ReUseable_Drawer(),
       body: SingleChildScrollView(
