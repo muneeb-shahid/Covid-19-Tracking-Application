@@ -1,3 +1,5 @@
+import 'package:covid_19_trackingapp/dependency_injection.dart';
+import 'package:covid_19_trackingapp/routes/approutes.dart';
 import 'package:covid_19_trackingapp/view/Articles/ArticlesView.dart';
 import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,7 @@ void main() async {
   );
 
   runApp(const MyApp());
+  DependencyInjection.init();
 }
 
 class MyApp extends StatelessWidget {
@@ -31,8 +34,8 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: const HomeView(),
-          // getPages: AppRoutes.appRoutes(),
+          // home: InternetConnectivityScreen()
+          getPages: AppRoutes.appRoutes(),
         );
       },
     );

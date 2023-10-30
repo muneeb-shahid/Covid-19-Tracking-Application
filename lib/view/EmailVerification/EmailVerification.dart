@@ -7,9 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-
 import '../../Controller/EmailVerificationController/EmailVerificationController.dart';
-
 
 class EmailVerification extends StatelessWidget {
   EmailVerification({super.key});
@@ -29,8 +27,6 @@ class EmailVerification extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -39,8 +35,7 @@ class EmailVerification extends StatelessWidget {
                             'A verification email has been sent to \n\n$user',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontFamily:
-                                    App_Fonts_Constants.Philosopher,
+                                fontFamily: App_Fonts_Constants.Philosopher,
                                 fontWeight: FontWeight.bold,
                                 color: App_Constants_Colors.app_grey_color,
                                 fontSize:
@@ -52,14 +47,13 @@ class EmailVerification extends StatelessWidget {
                     SizedBox(
                       height: emailVerificationController.screenHeight * 0.05,
                     ),
-                   
                     SizedBox(
                       height: emailVerificationController.screenHeight * 0.05,
                     ),
                     customLogin_SignupButton(
                         func: () => emailVerificationController
                             .sendEmailVerificationCode(),
-                      innerColor:App_Constants_Colors.app_pink_color,
+                        innerColor: App_Constants_Colors.app_pink_color,
                         textColor: App_Constants_Colors.app_white_color,
                         text: "Resend Email"),
                     SizedBox(
@@ -72,6 +66,6 @@ class EmailVerification extends StatelessWidget {
                         text: "Cancel"),
                   ],
                 ),
-              )), 
+              )),
         );
 }

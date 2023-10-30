@@ -36,9 +36,7 @@ class ArticlesView extends StatelessWidget {
           left: screenWidth * 0.02,
           right: screenWidth * 0.02,
         ),
-        child: 
-        
-        StreamBuilder(
+        child: StreamBuilder(
           stream: ref.onValue,
           builder: (context, AsyncSnapshot<DatabaseEvent> snapshot) {
             try {
@@ -53,7 +51,6 @@ class ArticlesView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                     
                       GestureDetector(
                         onTap: () {
                           Get.to(BlogFullPost(
@@ -102,7 +99,8 @@ class ArticlesView extends StatelessWidget {
                                         height: screenHeight * 0.03,
                                       ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
                                         children: [
                                           Text(
                                             list[index]['date'].toString(),
@@ -128,17 +126,18 @@ class ArticlesView extends StatelessWidget {
                                         style: TextStyle(
                                             color: App_Constants_Colors
                                                 .app_black_color,
-                                            fontFamily: App_Fonts_Constants.Poppins,
+                                            fontFamily:
+                                                App_Fonts_Constants.Poppins,
                                             fontSize: 13.sp),
                                       ),
                                       SizedBox(
                                         height: screenHeight * 0.03,
                                       ),
                                       customLogin_SignupButton(
-                                          innerColor:
-                                              App_Constants_Colors.app_green_color,
-                                          textColor:
-                                              App_Constants_Colors.app_white_color,
+                                          innerColor: App_Constants_Colors
+                                              .app_green_color,
+                                          textColor: App_Constants_Colors
+                                              .app_white_color,
                                           text: "Read more",
                                           func: () => Get.to(BlogFullPost(
                                                 blogData: list[index],
@@ -154,9 +153,9 @@ class ArticlesView extends StatelessWidget {
                           ),
                         ),
                       ),
-                   SizedBox(
-                                      height: screenHeight * 0.02,
-                                    ),
+                      SizedBox(
+                        height: screenHeight * 0.02,
+                      ),
                     ],
                   );
                 },
@@ -171,6 +170,7 @@ class ArticlesView extends StatelessWidget {
                 ),
               );
             }
+
             return Container(
               child: Center(
                 child: Lottie.asset(
@@ -183,7 +183,6 @@ class ArticlesView extends StatelessWidget {
             );
           },
         ),
-   
       ),
     );
   }
