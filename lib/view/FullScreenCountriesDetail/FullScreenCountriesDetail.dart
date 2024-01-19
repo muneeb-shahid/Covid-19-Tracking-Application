@@ -2,7 +2,7 @@ import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Wi
 import 'package:covid_19_trackingapp/Reuseable%20Components/ReusbaleRow/ReusbaleRow.dart';
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
-import 'package:covid_19_trackingapp/controller/FullScreenCountriesDetailController/FullScreenCountriesDetailController.dart';
+import 'package:covid_19_trackingapp/controller/full_screen_countries_detail_controller/full_screen_countries_detail_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pie_chart/pie_chart.dart';
@@ -23,12 +23,12 @@ class FullScreenCountriesDetail extends StatelessWidget {
       backgroundColor: App_Constants_Colors.app_background_color,
       appBar: AppBar(
           backgroundColor: App_Constants_Colors.app_green_color,
-           elevation: 0,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20)),
-            ),
+          elevation: 0,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20)),
+          ),
           title: TextHeading(
               data["country"], App_Constants_Colors.app_white_color)),
       body: SingleChildScrollView(
@@ -69,7 +69,7 @@ class FullScreenCountriesDetail extends StatelessWidget {
                               "Country Name",
                               App_Constants_Colors.app_black_color,
                               data["country"],
-                              App_Constants_Colors.app_blue_color),
+                              App_Constants_Colors.appBlueColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
@@ -77,7 +77,7 @@ class FullScreenCountriesDetail extends StatelessWidget {
                               "Population".toString(),
                               App_Constants_Colors.app_black_color,
                               data["population"].toString(),
-                              App_Constants_Colors.app_purple_color),
+                              App_Constants_Colors.appPurpleColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
@@ -85,7 +85,7 @@ class FullScreenCountriesDetail extends StatelessWidget {
                               "Cases".toString(),
                               App_Constants_Colors.app_black_color,
                               data["cases"].toString(),
-                              App_Constants_Colors.app_blue_color),
+                              App_Constants_Colors.appBlueColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
@@ -93,7 +93,7 @@ class FullScreenCountriesDetail extends StatelessWidget {
                               "Today Cases".toString(),
                               App_Constants_Colors.app_black_color,
                               data["todayCases"].toString(),
-                              App_Constants_Colors.app_purple_color),
+                              App_Constants_Colors.appPurpleColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
@@ -101,7 +101,7 @@ class FullScreenCountriesDetail extends StatelessWidget {
                               "Deaths".toString(),
                               App_Constants_Colors.app_black_color,
                               data["deaths"].toString(),
-                              App_Constants_Colors.app_red_color),
+                              App_Constants_Colors.appRedColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
@@ -117,7 +117,7 @@ class FullScreenCountriesDetail extends StatelessWidget {
                               "Active".toString(),
                               App_Constants_Colors.app_black_color,
                               data["active"].toString(),
-                              App_Constants_Colors.app_red_color),
+                              App_Constants_Colors.appRedColor),
                         ],
                       ),
                     ),

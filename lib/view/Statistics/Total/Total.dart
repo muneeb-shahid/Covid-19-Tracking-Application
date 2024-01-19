@@ -3,14 +3,14 @@ import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Wi
 import 'package:covid_19_trackingapp/Reuseable%20Components/Reuseable%20statistics/Reuseable_statistics.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
-import 'package:covid_19_trackingapp/model/WorldStatesModel/WorldStatesModel.dart';
+import 'package:covid_19_trackingapp/model/world_states_model/world_states_model.dart';
 import 'package:covid_19_trackingapp/services/StatesServices/StatesServices.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:lottie/lottie.dart';
-import '../../../controller/TotalController/TotalController.dart';
+import '../../../controller/total_controller/total_controller.dart';
 
 class TotalView extends StatelessWidget {
   const TotalView({super.key});
@@ -22,13 +22,16 @@ class TotalView extends StatelessWidget {
     return Scaffold(
         backgroundColor: App_Constants_Colors.app_background_color,
         body: Padding(
-           padding:  EdgeInsets.only(left: screenWidth*0.05,right:  screenWidth*0.05,),
+          padding: EdgeInsets.only(
+            left: screenWidth * 0.05,
+            right: screenWidth * 0.05,
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                 SizedBox(
-                height: screenHeight * 0.03,
-              ),
+                SizedBox(
+                  height: screenHeight * 0.03,
+                ),
                 FutureBuilder(
                   future: statesServices.fetchWorldStatesRecord(),
                   builder: (context, AsyncSnapshot<WorldStatesModel> snapshot) {
@@ -48,13 +51,13 @@ class TotalView extends StatelessWidget {
                             snapshot.data!.cases.toString(),
                             "Total Cases",
                             App_Images.sad_face,
-                            App_Constants_Colors.app_purple_color,
+                            App_Constants_Colors.appPurpleColor,
                           ),
                           Reuseable_statistics(
                             snapshot.data!.active.toString(),
                             "Active Cases",
                             App_Images.expressionless,
-                            App_Constants_Colors.app_blue_color,
+                            App_Constants_Colors.appBlueColor,
                           ),
                           Reuseable_statistics(
                             snapshot.data!.recovered.toString(),
@@ -66,7 +69,7 @@ class TotalView extends StatelessWidget {
                             snapshot.data!.deaths.toString(),
                             "Deaths Cases",
                             App_Images.crying,
-                            App_Constants_Colors.app_red_color,
+                            App_Constants_Colors.appRedColor,
                           ),
                           Card(
                             shadowColor: Colors.white,
@@ -79,12 +82,10 @@ class TotalView extends StatelessWidget {
                                 Text(
                                   "Total Statistics",
                                   style: TextStyle(
-                                      fontSize: App_Fonts_Constants
-                                          .heading_font_size.sp,
-                                      fontFamily:
-                                          App_Fonts_Constants.Philosopher,
-                                      color:
-                                          App_Constants_Colors.app_black_color,
+                                      fontSize:
+                                          AppFontsConstants.headingFontSize.sp,
+                                      fontFamily: AppFontsConstants.philosopher,
+                                      color: App_Constants_Colors.appBlackColor,
                                       letterSpacing: 3,
                                       fontWeight: FontWeight.bold),
                                 ),

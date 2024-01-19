@@ -1,6 +1,6 @@
 import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
 import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
 import 'package:covid_19_trackingapp/view/Statistics/Countries/Countries.dart';
@@ -8,7 +8,7 @@ import 'package:covid_19_trackingapp/view/Statistics/Total/Total.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../controller/StatisticsViewController/StatisticsViewController.dart';
+import '../../controller/statistics_View_controller/statistics_View_controller.dart';
 
 class StatisticsView extends StatelessWidget {
   const StatisticsView({super.key});
@@ -19,11 +19,10 @@ class StatisticsView extends StatelessWidget {
         Get.put(StatisticsViewController());
     return DefaultTabController(
         length: statisticsViewController.tabs.length,
-        child: 
-        Scaffold(
+        child: Scaffold(
           appBar: AppBar(
             title:
-                TextHeading("Statistics", App_Constants_Colors.app_white_color),
+                textHeading("Statistics", App_Constants_Colors.app_white_color),
             elevation: 0,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -45,7 +44,7 @@ class StatisticsView extends StatelessWidget {
             ),
           ),
           drawer: ReUseable_Drawer(),
-          body:const TabBarView(
+          body: const TabBarView(
             children: [
               TotalView(),
               CountriesView(),

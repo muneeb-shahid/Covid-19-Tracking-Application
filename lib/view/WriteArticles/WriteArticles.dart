@@ -1,9 +1,9 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/CustomButton.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/custom_button.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_drawer/reuseable_drawer.dart';
+import 'package:covid_19_trackingapp/reuseable_components/responsive_height_and_width/responsive.dart';
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
-import 'package:covid_19_trackingapp/constants/TextParagraph/TextParagraph.dart';
+import 'package:covid_19_trackingapp/constants/text_paragraph/text_paragraph.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
 import 'package:covid_19_trackingapp/view/Login/Login.dart';
@@ -19,14 +19,14 @@ class WriteArticles extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: TextHeading(
-            "Write an Article", App_Constants_Colors.app_white_color),
+            "Write an Article", AppConstantsColors.app_white_color),
         elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),
         ),
-        backgroundColor: App_Constants_Colors.app_green_color,
+        backgroundColor: AppConstantsColors.app_green_color,
       ),
       drawer: ReUseable_Drawer(),
       body: SingleChildScrollView(
@@ -53,7 +53,7 @@ class WriteArticles extends StatelessWidget {
                 TextSpan(
                   text: 'Article are ',
                   style: TextStyle(
-                      color: App_Constants_Colors.app_black_color,
+                      color: AppConstantsColors.app_black_color,
                       fontSize: App_Fonts_Constants.heading_font_size.sp,
                       fontFamily: App_Fonts_Constants.Philosopher,
                       wordSpacing: 1,
@@ -66,12 +66,12 @@ class WriteArticles extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.normal,
                             decoration: TextDecoration.underline,
-                            color: App_Constants_Colors.app_red_color,
+                            color: AppConstantsColors.appRedColor,
                             fontFamily: App_Fonts_Constants.Philosopher)),
                     TextSpan(
                       text: ' by only ',
                       style: TextStyle(
-                          color: App_Constants_Colors.app_black_color,
+                          color: AppConstantsColors.app_black_color,
                           fontSize: App_Fonts_Constants.heading_font_size.sp,
                           fontFamily: App_Fonts_Constants.Philosopher,
                           wordSpacing: 1,
@@ -84,7 +84,7 @@ class WriteArticles extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.normal,
                             decoration: TextDecoration.underline,
-                            color: App_Constants_Colors.app_red_color,
+                            color: AppConstantsColors.appRedColor,
                             fontFamily: App_Fonts_Constants.Philosopher)),
                   ],
                 ),
@@ -93,7 +93,6 @@ class WriteArticles extends StatelessWidget {
                   backgroundColor: Color.fromARGB(255, 236, 238, 240),
                 ),
               ),
-
               SizedBox(
                 height: screenHeight * 0.05,
               ),
@@ -101,9 +100,9 @@ class WriteArticles extends StatelessWidget {
                 padding: EdgeInsets.only(
                   left: screenWidth * 0.05,
                 ),
-                child: TextParagraph(
+                child: textParagraph(
                   "Please Login to your account for Write an Article",
-                  App_Constants_Colors.app_grey_color,
+                  AppConstantsColors.appGreyColor,
                 ),
               ),
               SizedBox(
@@ -111,10 +110,9 @@ class WriteArticles extends StatelessWidget {
               ),
               customButton(
                   nextscreen: const Login(),
-                  innerColor: App_Constants_Colors.app_green_color,
-                  textColor: App_Constants_Colors.app_white_color,
+                  innerColor: AppConstantsColors.app_green_color,
+                  textColor: AppConstantsColors.app_white_color,
                   text: "Go to Login Page")
-         
             ],
           ),
         ),

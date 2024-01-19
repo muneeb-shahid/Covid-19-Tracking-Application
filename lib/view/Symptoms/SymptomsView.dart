@@ -1,7 +1,7 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
 import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
 import 'package:covid_19_trackingapp/Reuseable%20Components/ReuseableHelpSymtomps/ReuseableHelpSymtomps.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
 import 'package:flutter/material.dart';
 
 import '../../Reuseable Components/Responsive_Height,Width/responsive.dart';
@@ -14,7 +14,7 @@ class SymptomsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextHeading("Symptoms", App_Constants_Colors.app_white_color),
+        title: textHeading("Symptoms", App_Constants_Colors.app_white_color),
         elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -25,11 +25,14 @@ class SymptomsView extends StatelessWidget {
       ),
       drawer: ReUseable_Drawer(),
       body: Padding(
-        padding:  EdgeInsets.only(left: screenWidth*0.05,right:  screenWidth*0.05,),
+        padding: EdgeInsets.only(
+          left: screenWidth * 0.05,
+          right: screenWidth * 0.05,
+        ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-               SizedBox(
+              SizedBox(
                 height: screenHeight * 0.03,
               ),
               Image.asset(App_Images.symtomps),
@@ -50,7 +53,6 @@ class SymptomsView extends StatelessWidget {
                 children: [
                   ReuseableHelpSymtomps(App_Images.Sneezing, "Fever"),
                   ReuseableHelpSymtomps(App_Images.vomit, "Vomit"),
-
                 ],
               )
             ],

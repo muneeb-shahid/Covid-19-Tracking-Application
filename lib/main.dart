@@ -1,4 +1,4 @@
-import 'package:covid_19_trackingapp/controller/MyAppController/MyAppController.dart';
+import 'package:covid_19_trackingapp/controller/my_app_controller/my_app_controller.dart';
 import 'package:covid_19_trackingapp/dependency_injection.dart';
 import 'package:covid_19_trackingapp/routes/approutes.dart';
 import 'package:covid_19_trackingapp/view/Articles/ArticlesView.dart';

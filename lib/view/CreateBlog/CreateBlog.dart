@@ -2,7 +2,7 @@ import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&s
 import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
-import 'package:covid_19_trackingapp/controller/CreateBlogController/CreateBlogController.dart';
+import 'package:covid_19_trackingapp/controller/create_blog_controller/create_blog_controller.dart';
 import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

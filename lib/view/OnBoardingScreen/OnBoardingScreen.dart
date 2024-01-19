@@ -2,9 +2,9 @@ import 'package:covid_19_trackingapp/Images/images.dart';
 import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
 
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
-import 'package:covid_19_trackingapp/constants/TextParagraph/TextParagraph.dart';
+import 'package:covid_19_trackingapp/constants/text_paragraph/text_paragraph.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
-import 'package:covid_19_trackingapp/controller/OnBoardingScreenController/OnBoardingScreenController.dart';
+import 'package:covid_19_trackingapp/controller/Onboarding_screen_controller/Onboarding_screen_controller.dart';
 import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,10 +18,7 @@ class OnBoardingScreen extends StatelessWidget {
         Get.put(OnBoardingScreenController());
     return Scaffold(
       backgroundColor: App_Constants_Colors.app_background_color,
-      body: 
-      
-      
-      Stack(
+      body: Stack(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 60, left: 30, right: 30),
@@ -34,15 +31,16 @@ class OnBoardingScreen extends StatelessWidget {
                   children: [
                     Image.asset(App_Images.CoronaVirus_logo),
                     SizedBox(height: screenHeight * 0.1),
-                    Image.asset( onBoardingScreenController.onboardingData[index].image,
-                    
-                    height: screenHeight*0.3,),
+                    Image.asset(
+                      onBoardingScreenController.onboardingData[index].image,
+                      height: screenHeight * 0.3,
+                    ),
                     SizedBox(height: screenHeight * 0.1),
                     TextHeading(
                         onBoardingScreenController.onboardingData[index].title,
                         App_Constants_Colors.app_black_color),
                     SizedBox(height: screenHeight * 0.05),
-                    TextParagraph(
+                    textParagraph(
                       onBoardingScreenController
                           .onboardingData[index].description,
                       App_Constants_Colors.app_black_color,
@@ -74,7 +72,7 @@ class OnBoardingScreen extends StatelessWidget {
                                 width: screenWidth * 0.50,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  color: App_Constants_Colors.app_green_color,
+                                  color: App_Constants_Colors.appGreenColor,
                                 ),
                                 child: Center(
                                   child: TextHeading(
@@ -108,7 +106,7 @@ class OnBoardingScreen extends StatelessWidget {
                                 color: (onBoardingScreenController
                                             .selectedPageIndex ==
                                         index)
-                                    ? App_Constants_Colors.app_green_color
+                                    ? App_Constants_Colors.appGreenColor
                                     : Colors.grey,
                               ),
                             );

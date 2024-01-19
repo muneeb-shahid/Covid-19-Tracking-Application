@@ -1,20 +1,20 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReuseablePrevention/ReuseablePrevention.dart';
+import 'package:covid_19_trackingapp/reuseable_components/ReuseablePrevention/ReuseablePrevention.dart';
 import 'package:covid_19_trackingapp/view/BlogFullPost/BlogFullPost.dart';
 import 'package:covid_19_trackingapp/view/OnBoardingScreen/OnBoardingScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
-import 'package:covid_19_trackingapp/constants/TextParagraph/TextParagraph.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
+import 'package:covid_19_trackingapp/constants/text_paragraph/text_paragraph.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&signupButton.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_drawer/reuseable_drawer.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,10 +33,9 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: App_Constants_Colors.app_background_color,
       appBar: AppBar(
-        title: TextHeading("Home", App_Constants_Colors.app_white_color),
+        title: textHeading("Home", App_Constants_Colors.app_white_color),
         elevation: 0,
         backgroundColor: App_Constants_Colors.app_green_color,
-        
       ),
       drawer: ReUseable_Drawer(),
       body: SingleChildScrollView(
@@ -59,21 +58,21 @@ class HomeView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        TextHeading(
+                        textHeading(
                           "Covid-19",
                           App_Constants_Colors.app_white_color,
                         ),
                         SizedBox(
                           height: screenHeight * 0.03,
                         ),
-                        TextHeading(
+                        textHeading(
                           "Are you feeling sick?",
                           App_Constants_Colors.app_white_color,
                         ),
                         SizedBox(
                           height: screenHeight * 0.01,
                         ),
-                        TextParagraph(
+                        textParagraph(
                           "If you feel sick with any of covid-19 symptoms please call or message us immediately for help.",
                           App_Constants_Colors.app_white_color,
                         ),
@@ -92,13 +91,13 @@ class HomeView extends StatelessWidget {
                                 width: screenWidth * 0.4,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30),
-                                    color: App_Constants_Colors.app_red_color),
+                                    color: App_Constants_Colors.appRedColor),
                                 child: ListTile(
                                   leading: Icon(
                                     Icons.call_outlined,
                                     color: App_Constants_Colors.app_white_color,
                                   ),
-                                  title: TextParagraph(
+                                  title: textParagraph(
                                     "CALL NOW",
                                     App_Constants_Colors.app_white_color,
                                   ),
@@ -124,13 +123,13 @@ class HomeView extends StatelessWidget {
                                 width: screenWidth * 0.4,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30),
-                                    color: App_Constants_Colors.app_blue_color),
+                                    color: App_Constants_Colors.appBlueColor),
                                 child: ListTile(
                                   leading: Icon(
                                     Icons.email_outlined,
                                     color: App_Constants_Colors.app_white_color,
                                   ),
-                                  title: TextParagraph(
+                                  title: textParagraph(
                                     "SEND SMS",
                                     App_Constants_Colors.app_white_color,
                                   ),
@@ -156,7 +155,7 @@ class HomeView extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextHeading(
+                  textHeading(
                       "Prevention", App_Constants_Colors.app_black_color),
                   Icon(
                     Icons.forward_outlined,
@@ -204,7 +203,7 @@ class HomeView extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextHeading("Article", App_Constants_Colors.app_black_color),
+                  textHeading("Article", App_Constants_Colors.app_black_color),
                   Icon(
                     Icons.forward_outlined,
                     color: App_Constants_Colors.app_black_color,
@@ -252,7 +251,7 @@ class HomeView extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(20),
                                       child: Card(
                                         color: App_Constants_Colors
-                                            .app_white_color_70,
+                                            .appWhiteColor70,
                                         child: Column(
                                           children: [
                                             Image.network(

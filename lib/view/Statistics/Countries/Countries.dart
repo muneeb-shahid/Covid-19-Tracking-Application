@@ -1,12 +1,12 @@
 import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
 import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
-import 'package:covid_19_trackingapp/constants/TextParagraph/TextParagraph.dart';
+import 'package:covid_19_trackingapp/constants/text_paragraph/text_paragraph.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/services/StatesServices/StatesServices.dart';
 import 'package:covid_19_trackingapp/view/FullScreenCountriesDetail/FullScreenCountriesDetail.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../controller/CountriesViewController/CountriesViewController.dart';
+import '../../../controller/countries_view_controller/countries_view_controller.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CountriesView extends StatelessWidget {
@@ -36,8 +36,7 @@ class CountriesView extends StatelessWidget {
                     onChanged: (value) {
                       countriesViewController.UpdateonChanged(value);
                     },
-                    style:
-                        TextStyle(color: App_Constants_Colors.app_black_color),
+                    style: TextStyle(color: App_Constants_Colors.appBlackColor),
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -46,7 +45,7 @@ class CountriesView extends StatelessWidget {
                               color: App_Constants_Colors.app_green_color)),
                       prefixIcon: Icon(
                         Icons.search,
-                        color: App_Constants_Colors.app_black_color,
+                        color: App_Constants_Colors.appBlackColor,
                       ),
                       suffixIcon: IconButton(
                         onPressed: () {
@@ -54,12 +53,12 @@ class CountriesView extends StatelessWidget {
                         },
                         icon: Icon(
                           Icons.close,
-                          color: App_Constants_Colors.app_black_color,
+                          color: App_Constants_Colors.appBlackColor,
                         ),
                       ),
                       hintText: "Search with countries names",
-                      hintStyle: TextStyle(
-                          color: App_Constants_Colors.app_black_color),
+                      hintStyle:
+                          TextStyle(color: App_Constants_Colors.appBlackColor),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
                       ),
@@ -140,12 +139,10 @@ class CountriesView extends StatelessWidget {
                                             )),
                                         title: TextHeading(
                                             snapshot.data![index]["country"],
-                                            App_Constants_Colors
-                                                .app_black_color),
-                                        subtitle: TextParagraph(
+                                            App_Constants_Colors.appBlackColor),
+                                        subtitle: textParagraph(
                                             "Total Cases: ${snapshot.data![index]["cases"].toString()}\nTotal Recovered: ${snapshot.data![index]["recovered"].toString()} ",
-                                            App_Constants_Colors
-                                                .app_grey_color),
+                                            App_Constants_Colors.appGreyColor),
                                       ),
                                     ),
                                     SizedBox(
@@ -176,12 +173,10 @@ class CountriesView extends StatelessWidget {
                                             )),
                                         title: TextHeading(
                                             snapshot.data![index]["country"],
-                                            App_Constants_Colors
-                                                .app_black_color),
-                                        subtitle: TextParagraph(
+                                            App_Constants_Colors.appBlackColor),
+                                        subtitle: textParagraph(
                                             "Total Cases: ${snapshot.data![index]["cases"].toString()}\nTotal Recovered: ${snapshot.data![index]["recovered"].toString()} ",
-                                            App_Constants_Colors
-                                                .app_grey_color),
+                                            App_Constants_Colors.appGreyColor),
                                       ),
                                     ),
                                     SizedBox(
@@ -190,8 +185,7 @@ class CountriesView extends StatelessWidget {
                                   ],
                                 );
                               } else {
-                                return Container(
-                                    );
+                                return Container();
                               }
                             },
                           ),

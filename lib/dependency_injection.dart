@@ -1,4 +1,4 @@
-import 'package:covid_19_trackingapp/controller/NetworkController/network_controller.dart';
+import 'package:covid_19_trackingapp/controller/network_controller/network_controller.dart';
 import 'package:get/get.dart';
 
 

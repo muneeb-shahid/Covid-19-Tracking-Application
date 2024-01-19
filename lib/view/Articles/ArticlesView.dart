@@ -28,7 +28,7 @@ class ArticlesView extends StatelessWidget {
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),
         ),
-        backgroundColor: App_Constants_Colors.app_green_color,
+        backgroundColor: App_Constants_Colors.appGreenColor,
       ),
       drawer: ReUseable_Drawer(),
       body: Padding(
@@ -60,7 +60,7 @@ class ArticlesView extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: Card(
-                            color: App_Constants_Colors.app_white_color_70,
+                            color: App_Constants_Colors.appWhiteColor70,
                             child: Column(
                               children: [
                                 Image.network(
@@ -135,7 +135,7 @@ class ArticlesView extends StatelessWidget {
                                       ),
                                       customLogin_SignupButton(
                                           innerColor: App_Constants_Colors
-                                              .app_green_color,
+                                              .appGreenColor,
                                           textColor: App_Constants_Colors
                                               .app_white_color,
                                           text: "Read more",

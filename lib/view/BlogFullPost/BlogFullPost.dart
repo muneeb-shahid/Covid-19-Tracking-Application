@@ -1,4 +1,4 @@
-import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&signupButton.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
 import 'package:flutter/material.dart';
