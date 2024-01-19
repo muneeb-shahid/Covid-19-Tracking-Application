@@ -1,18 +1,16 @@
 class RoutesName {
-  static String OnBoardingScreen = '/';
-  static String HomeView = "/HomeView";
-  static String ArticlesView = "/ArticlesView ";
-  static String BlogFullPost = "/BlogFullPost";
-  static String CreateBlog = "/CreateBlog";
-  static String FullScreenCountriesDetail = "/FullScreenCountriesDetail";
-  static String HelpView = "/HelpView";
-  static String Login = "/Login";
-
-  static String SignUp = "/SignUp";
-  static String StatisticsView = "/StatisticsView";
-  static String TotalView = "/TotalView";
-  static String CountriesView = "/CountriesView";
-  static String SymptomsView = "/SymptomsView";
-
-  static String WriteArticles = "/WriteArticles";
+  static String onBoardingScreen = '/';
+  static String homeView = "/homeView";
+  static String articlesView = "/articlesView ";
+  static String blogFullPost = "/blogFullPost";
+  static String createBlog = "/createBlog";
+  static String fullScreenCountriesDetail = "/fullScreenCountriesDetail";
+  static String helpView = "/helpView";
+  static String login = "/login";
+  static String signUp = "/signUp";
+  static String statisticsView = "/statisticsView";
+  static String totalView = "/totalView";
+  static String countriesView = "/countriesView";
+  static String symptomsView = "/symptomsView";
+  static String writeArticles = "/writeArticles";
 }

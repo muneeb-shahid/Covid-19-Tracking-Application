@@ -1,11 +1,10 @@
-import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
 import 'package:flutter/material.dart';
 
-Widget ReuseableHelpSymtomps(image, headingtext) {
-  return 
-  SizedBox(
+Widget reuseableHelpSymtomps(image, headingtext) {
+  return SizedBox(
     height: screenHeight * 0.3,
     width: screenWidth * 0.4,
     child: Card(
@@ -34,13 +33,11 @@ Widget ReuseableHelpSymtomps(image, headingtext) {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              TextHeading(headingtext, App_Constants_Colors.app_black_color),
+              textHeading(headingtext, AppConstantsColors.appBlackColor),
             ],
           ),
-      
         ],
       ),
     ),
   );
-
 }

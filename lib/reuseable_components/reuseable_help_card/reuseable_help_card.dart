@@ -11,12 +11,12 @@ Widget ReuseableHelpCard(icon, headingtext, description) {
     shadowColor: Colors.white,
     child: ListTile(
       leading: CircleAvatar(
-          backgroundColor: AppConstantsColors.app_green_color,
+          backgroundColor: AppConstantsColors.appGreenColor,
           child: Icon(
             icon,
             color: AppConstantsColors.appWhiteColor,
           )),
-      title: textHeading(headingtext, AppConstantsColors.app_black_color),
+      title: textHeading(headingtext, AppConstantsColors.appBlackColor),
       subtitle: textParagraph(description, AppConstantsColors.appGreyColor),
     ),
   );

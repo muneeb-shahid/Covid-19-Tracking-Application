@@ -1,10 +1,10 @@
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
 import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
-import 'package:covid_19_trackingapp/view/Statistics/Countries/Countries.dart';
-import 'package:covid_19_trackingapp/view/Statistics/Total/Total.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_drawer/reuseable_drawer.dart';
+import 'package:covid_19_trackingapp/view/statistics/Countries/Countries.dart';
+import 'package:covid_19_trackingapp/view/statistics/Total/Total.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -22,28 +22,28 @@ class StatisticsView extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             title:
-                textHeading("Statistics", App_Constants_Colors.app_white_color),
+                textHeading("Statistics", AppConstantsColors.appWhiteColor),
             elevation: 0,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20)),
             ),
-            backgroundColor: App_Constants_Colors.app_green_color,
+            backgroundColor: AppConstantsColors.appGreenColor,
             bottom: TabBar(
               indicatorPadding: EdgeInsets.only(
                   left: screenWidth * 0.1, right: screenWidth * 0.1),
               indicatorWeight: 3,
               labelStyle: TextStyle(
-                  fontSize: App_Fonts_Constants.sub_heading_font_size.sp,
-                  fontFamily: App_Fonts_Constants.Poppins,
+                  fontSize: AppFontsConstants.subHeadingFontSize.sp,
+                  fontFamily: AppFontsConstants.poppins,
                   fontWeight: FontWeight.bold,
-                  color: App_Constants_Colors.app_white_color),
-              indicatorColor: App_Constants_Colors.app_white_color,
+                  color: AppConstantsColors.appWhiteColor),
+              indicatorColor: AppConstantsColors.appWhiteColor,
               tabs: statisticsViewController.tabs,
             ),
           ),
-          drawer: ReUseable_Drawer(),
+          drawer: reUseableDrawer(),
           body: const TabBarView(
             children: [
               TotalView(),

@@ -1,8 +1,8 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
 import 'package:covid_19_trackingapp/model/prevention/prevention.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
 import 'package:flutter/material.dart';
 
 List<PreventionModel> list_PreventionModel = [
@@ -42,12 +42,11 @@ Widget buildPreventionCard({required PreventionModel list_PreventionModel}) =>
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                TextHeading(list_PreventionModel.title,
-                    App_Constants_Colors.app_black_color),
+                textHeading(list_PreventionModel.title,
+                    AppConstantsColors.appBlackColor),
               ],
             ),
           ],
         ),
       ),
     );
-

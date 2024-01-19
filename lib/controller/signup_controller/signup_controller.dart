@@ -1,5 +1,5 @@
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
-import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
+import 'package:covid_19_trackingapp/view/home_view/home_view.dart';
 import 'package:covid_19_trackingapp/view/Login/Login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

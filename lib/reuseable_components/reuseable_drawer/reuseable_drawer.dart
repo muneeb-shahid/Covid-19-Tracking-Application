@@ -1,25 +1,25 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
-import 'package:covid_19_trackingapp/view/Articles/ArticlesView.dart';
-import 'package:covid_19_trackingapp/view/Help/HelpView.dart';
-import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
-import 'package:covid_19_trackingapp/view/Statistics/StatisticsView.dart';
-import 'package:covid_19_trackingapp/view/Symptoms/SymptomsView.dart';
-import 'package:covid_19_trackingapp/view/WriteArticles/WriteArticles.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
+import 'package:covid_19_trackingapp/view/articles/articles_view.dart';
+import 'package:covid_19_trackingapp/view/help/help_view.dart';
+import 'package:covid_19_trackingapp/view/home_view/home_view.dart';
+import 'package:covid_19_trackingapp/view/statistics/statistics_view.dart';
+import 'package:covid_19_trackingapp/view/symptoms/symptoms_view.dart';
+import 'package:covid_19_trackingapp/view/write_articles/write_articles.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-ReUseable_Drawer() {
+reUseableDrawer() {
   return Stack(
     children: [
       Drawer(
-          backgroundColor: App_Constants_Colors.app_green_color,
+          backgroundColor: AppConstantsColors.appGreenColor,
           child: ListView(
             children: [
               SizedBox(
@@ -35,14 +35,14 @@ ReUseable_Drawer() {
                 "Corono Virus",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontFamily: App_Fonts_Constants.Poppins,
-                    fontSize: App_Fonts_Constants.heading_font_size.sp,
-                    color: App_Constants_Colors.app_white_color,
+                    fontFamily: AppFontsConstants.poppins,
+                    fontSize: AppFontsConstants.headingFontSize.sp,
+                    color: AppConstantsColors.appWhiteColor,
                     letterSpacing: 5,
                     wordSpacing: 5),
               ))),
               Divider(
-                color: App_Constants_Colors.app_white_color,
+                color: AppConstantsColors.appWhiteColor,
                 thickness: 1,
               ),
               GestureDetector(
@@ -56,11 +56,11 @@ ReUseable_Drawer() {
                 child: ListTile(
                   leading: Icon(
                     Icons.home_outlined,
-                    color: App_Constants_Colors.app_white_color,
+                    color: AppConstantsColors.appWhiteColor,
                   ),
-                  title: TextHeading(
+                  title: textHeading(
                     "Home",
-                    App_Constants_Colors.app_white_color,
+                    AppConstantsColors.appWhiteColor,
                   ),
                 ),
               ),
@@ -75,11 +75,11 @@ ReUseable_Drawer() {
                 child: ListTile(
                   leading: Icon(
                     Icons.analytics_outlined,
-                    color: App_Constants_Colors.app_white_color,
+                    color: AppConstantsColors.appWhiteColor,
                   ),
-                  title: TextHeading(
+                  title: textHeading(
                     "Statistics",
-                    App_Constants_Colors.app_white_color,
+                    AppConstantsColors.appWhiteColor,
                   ),
                 ),
               ),
@@ -94,11 +94,11 @@ ReUseable_Drawer() {
                 child: ListTile(
                   leading: Icon(
                     Icons.add_to_photos_outlined,
-                    color: App_Constants_Colors.app_white_color,
+                    color: AppConstantsColors.appWhiteColor,
                   ),
-                  title: TextHeading(
+                  title: textHeading(
                     "Symptoms",
-                    App_Constants_Colors.app_white_color,
+                    AppConstantsColors.appWhiteColor,
                   ),
                 ),
               ),
@@ -113,11 +113,11 @@ ReUseable_Drawer() {
                 child: ListTile(
                   leading: Icon(
                     Icons.article_outlined,
-                    color: App_Constants_Colors.app_white_color,
+                    color: AppConstantsColors.appWhiteColor,
                   ),
-                  title: TextHeading(
+                  title: textHeading(
                     "Articles",
-                    App_Constants_Colors.app_white_color,
+                    AppConstantsColors.appWhiteColor,
                   ),
                 ),
               ),
@@ -132,11 +132,11 @@ ReUseable_Drawer() {
                 child: ListTile(
                   leading: Icon(
                     Icons.create,
-                    color: App_Constants_Colors.app_white_color,
+                    color: AppConstantsColors.appWhiteColor,
                   ),
-                  title: TextHeading(
+                  title: textHeading(
                     "Write an Articles",
-                    App_Constants_Colors.app_white_color,
+                    AppConstantsColors.appWhiteColor,
                   ),
                 ),
               ),
@@ -151,33 +151,33 @@ ReUseable_Drawer() {
                 child: ListTile(
                   leading: Icon(
                     Icons.help_outline_outlined,
-                    color: App_Constants_Colors.app_white_color,
+                    color: AppConstantsColors.appWhiteColor,
                   ),
-                  title: TextHeading(
+                  title: textHeading(
                     "Help",
-                    App_Constants_Colors.app_white_color,
+                    AppConstantsColors.appWhiteColor,
                   ),
                 ),
               ),
               SizedBox(
                 height: screenHeight * 0.03,
               ),
-            
               Positioned(
                 child: GestureDetector(
                     onTap: () => Get.back(),
                     child: Container(
                       height: screenHeight * 0.2,
                       decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(200),
-                              topRight: Radius.circular(200)),
-                          color: App_Constants_Colors.app_black_color),
+                        shape: BoxShape.rectangle,
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(200),
+                            topRight: Radius.circular(200)),
+                        color: AppConstantsColors.appBlackColor,
+                      ),
                       child: Icon(
                         Icons.close_rounded,
                         size: 60,
-                        color: App_Constants_Colors.app_white_color,
+                        color: AppConstantsColors.appWhiteColor,
                       ),
                     )),
               ),

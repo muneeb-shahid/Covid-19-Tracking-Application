@@ -1,8 +1,8 @@
-import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReusbaleRow/ReusbaleRow.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
 import 'package:covid_19_trackingapp/controller/full_screen_countries_detail_controller/full_screen_countries_detail_controller.dart';
+import 'package:covid_19_trackingapp/reuseable_components/responsive_height_and_width/responsive.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reusbale_row/reusbale_row.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pie_chart/pie_chart.dart';
@@ -20,17 +20,17 @@ class FullScreenCountriesDetail extends StatelessWidget {
     FullScreenCountriesDetailController fullScreenCountriesDetailController =
         Get.put(FullScreenCountriesDetailController());
     return Scaffold(
-      backgroundColor: App_Constants_Colors.app_background_color,
+      backgroundColor: AppConstantsColors.appBackgroundColor,
       appBar: AppBar(
-          backgroundColor: App_Constants_Colors.app_green_color,
+          backgroundColor: AppConstantsColors.appGreenColor,
           elevation: 0,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20)),
           ),
-          title: TextHeading(
-              data["country"], App_Constants_Colors.app_white_color)),
+          title: textHeading(
+              data["country"], AppConstantsColors.appWhiteColor)),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(
@@ -67,57 +67,57 @@ class FullScreenCountriesDetail extends StatelessWidget {
                           ),
                           ReusbaleRow(
                               "Country Name",
-                              App_Constants_Colors.app_black_color,
+                              AppConstantsColors.appBlackColor,
                               data["country"],
-                              App_Constants_Colors.appBlueColor),
+                              AppConstantsColors.appBlueColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
                           ReusbaleRow(
                               "Population".toString(),
-                              App_Constants_Colors.app_black_color,
+                              AppConstantsColors.appBlackColor,
                               data["population"].toString(),
-                              App_Constants_Colors.appPurpleColor),
+                              AppConstantsColors.appPurpleColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
                           ReusbaleRow(
                               "Cases".toString(),
-                              App_Constants_Colors.app_black_color,
+                              AppConstantsColors.appBlackColor,
                               data["cases"].toString(),
-                              App_Constants_Colors.appBlueColor),
+                              AppConstantsColors.appBlueColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
                           ReusbaleRow(
                               "Today Cases".toString(),
-                              App_Constants_Colors.app_black_color,
+                              AppConstantsColors.appBlackColor,
                               data["todayCases"].toString(),
-                              App_Constants_Colors.appPurpleColor),
+                              AppConstantsColors.appPurpleColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
                           ReusbaleRow(
                               "Deaths".toString(),
-                              App_Constants_Colors.app_black_color,
+                              AppConstantsColors.appBlackColor,
                               data["deaths"].toString(),
-                              App_Constants_Colors.appRedColor),
+                              AppConstantsColors.appRedColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
                           ReusbaleRow(
                               "Recovered".toString(),
-                              App_Constants_Colors.app_black_color,
+                              AppConstantsColors.appBlackColor,
                               data["recovered"].toString(),
-                              App_Constants_Colors.app_green_color),
+                              AppConstantsColors.appGreenColor),
                           SizedBox(
                             height: screenHeight * 0.02,
                           ),
                           ReusbaleRow(
                               "Active".toString(),
-                              App_Constants_Colors.app_black_color,
+                              AppConstantsColors.appBlackColor,
                               data["active"].toString(),
-                              App_Constants_Colors.appRedColor),
+                              AppConstantsColors.appRedColor),
                         ],
                       ),
                     ),

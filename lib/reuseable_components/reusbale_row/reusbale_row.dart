@@ -1,3 +1,4 @@
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
 import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
 import 'package:flutter/material.dart';
 
@@ -7,8 +8,8 @@ Widget ReusbaleRow(text, color, num, color1) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        TextHeading(text, color),
-        TextHeading(num, color1),
+        textHeading(text, color),
+        textHeading(num, color1),
       ],
     ),
   );

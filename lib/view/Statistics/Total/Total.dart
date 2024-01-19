@@ -1,16 +1,16 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/Reuseable%20statistics/Reuseable_statistics.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
 import 'package:covid_19_trackingapp/model/world_states_model/world_states_model.dart';
-import 'package:covid_19_trackingapp/services/StatesServices/StatesServices.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_statistics/Reuseable_statistics.dart';
+import 'package:covid_19_trackingapp/services/states_services/states_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:lottie/lottie.dart';
 import '../../../controller/total_controller/total_controller.dart';
+import '../../../reuseable_components/custom_button/login_and_signup_button.dart';
 
 class TotalView extends StatelessWidget {
   const TotalView({super.key});
@@ -20,7 +20,7 @@ class TotalView extends StatelessWidget {
     StatesServices statesServices = Get.put(StatesServices());
     TotalController totalController = Get.put(TotalController());
     return Scaffold(
-        backgroundColor: App_Constants_Colors.app_background_color,
+        backgroundColor: AppConstantsColors.appBackgroundColor,
         body: Padding(
           padding: EdgeInsets.only(
             left: screenWidth * 0.05,
@@ -47,29 +47,29 @@ class TotalView extends StatelessWidget {
                     } else {
                       return Column(
                         children: [
-                          Reuseable_statistics(
+                          reuseableStatistics(
                             snapshot.data!.cases.toString(),
                             "Total Cases",
                             App_Images.sad_face,
-                            App_Constants_Colors.appPurpleColor,
+                            AppConstantsColors.appPurpleColor,
                           ),
-                          Reuseable_statistics(
+                          reuseableStatistics(
                             snapshot.data!.active.toString(),
                             "Active Cases",
                             App_Images.expressionless,
-                            App_Constants_Colors.appBlueColor,
+                            AppConstantsColors.appBlueColor,
                           ),
-                          Reuseable_statistics(
+                          reuseableStatistics(
                             snapshot.data!.recovered.toString(),
                             "Recovered Cases",
                             App_Images.smile,
-                            App_Constants_Colors.app_green_color,
+                            AppConstantsColors.appGreenColor,
                           ),
-                          Reuseable_statistics(
+                          reuseableStatistics(
                             snapshot.data!.deaths.toString(),
                             "Deaths Cases",
                             App_Images.crying,
-                            App_Constants_Colors.appRedColor,
+                            AppConstantsColors.appRedColor,
                           ),
                           Card(
                             shadowColor: Colors.white,
@@ -85,7 +85,7 @@ class TotalView extends StatelessWidget {
                                       fontSize:
                                           AppFontsConstants.headingFontSize.sp,
                                       fontFamily: AppFontsConstants.philosopher,
-                                      color: App_Constants_Colors.appBlackColor,
+                                      color: AppConstantsColors.appBlackColor,
                                       letterSpacing: 3,
                                       fontWeight: FontWeight.bold),
                                 ),

@@ -1,15 +1,14 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&signupButton.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
-import 'package:covid_19_trackingapp/controller/Email&PasswordValidation/Email&PasswordValidation.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
+import 'package:covid_19_trackingapp/controller/email_and_password_validation/email_and_password_validation.dart';
+import 'package:covid_19_trackingapp/controller/signup_controller/signup_controller.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_drawer/reuseable_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-
-import '../../Controller/SignUpController/SignUpController.dart';
 import '../../constants/fonts_size_constant/fonts_size_constant.dart';
 import '../login/login.dart';
 
@@ -26,19 +25,19 @@ class SignUp extends StatelessWidget {
     var widthh = MediaQuery.of(context).size.width * 1;
 
     return Scaffold(
-      backgroundColor: App_Constants_Colors.app_background_color,
+      backgroundColor: AppConstantsColors.appBackgroundColor,
       appBar: AppBar(
-        title: TextHeading(
-            "Register your account", App_Constants_Colors.app_white_color),
+        title: textHeading(
+            "Register your account", AppConstantsColors.appWhiteColor),
         elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),
         ),
-        backgroundColor: App_Constants_Colors.app_green_color,
+        backgroundColor: AppConstantsColors.appGreenColor,
       ),
-      drawer: ReUseable_Drawer(),
+      drawer: reUseableDrawer(),
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(
@@ -59,10 +58,10 @@ class SignUp extends StatelessWidget {
                     child: Text(
                       "Welcome onBoard!",
                       style: TextStyle(
-                          fontFamily: App_Fonts_Constants.Philosopher,
+                          fontFamily: AppFontsConstants.philosopher,
                           fontWeight: FontWeight.bold,
-                          color: App_Constants_Colors.app_black_color,
-                          fontSize: App_Fonts_Constants.heading_font_size.sp),
+                          color: AppConstantsColors.appBlackColor,
+                          fontSize: AppFontsConstants.headingFontSize.sp),
                     ),
                   ),
                   SizedBox(
@@ -89,11 +88,11 @@ class SignUp extends StatelessWidget {
                                     .requestFocus(signUpController.focusNode2);
                               },
                               style: TextStyle(
-                                  color: App_Constants_Colors.app_black_color),
+                                  color: AppConstantsColors.appBlackColor),
                               validator: signUpController.validateName,
                               decoration: InputDecoration(
                                 filled: true,
-                                fillColor: App_Constants_Colors.app_white_color,
+                                fillColor: AppConstantsColors.appWhiteColor,
                                 hintText: 'Enter your full name',
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
@@ -123,11 +122,11 @@ class SignUp extends StatelessWidget {
                               },
                               keyboardType: TextInputType.name,
                               style: TextStyle(
-                                  color: App_Constants_Colors.app_black_color),
+                                  color: AppConstantsColors.appBlackColor),
                               validator: emailPasswordValidation.validateEmail,
                               decoration: InputDecoration(
                                 filled: true,
-                                fillColor: App_Constants_Colors.app_white_color,
+                                fillColor: AppConstantsColors.appWhiteColor,
                                 hintText: 'Enter your email',
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
@@ -154,12 +153,12 @@ class SignUp extends StatelessWidget {
                               controller: signUpController.password,
                               focusNode: signUpController.focusNode3,
                               style: TextStyle(
-                                  color: App_Constants_Colors.app_black_color),
+                                  color: AppConstantsColors.appBlackColor),
                               validator:
                                   emailPasswordValidation.validatePassword,
                               decoration: InputDecoration(
                                 filled: true,
-                                fillColor: App_Constants_Colors.app_white_color,
+                                fillColor: AppConstantsColors.appWhiteColor,
                                 hintText: 'Enter your password',
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
@@ -175,7 +174,7 @@ class SignUp extends StatelessWidget {
                                 prefixIcon: const Icon(Icons.password,
                                     color: Colors.black),
                                 suffixIconColor:
-                                    App_Constants_Colors.app_black_color,
+                                    AppConstantsColors.appBlackColor,
                                 suffixIcon: GestureDetector(
                                   onTap: () {
                                     signUpController
@@ -195,10 +194,10 @@ class SignUp extends StatelessWidget {
                   SizedBox(
                     height: heightt * 0.05,
                   ),
-                  customLogin_SignupButton(
+                  customLoginSignupButton(
                       func: () => signUpController.register(),
-                      innerColor: App_Constants_Colors.app_green_color,
-                      textColor: App_Constants_Colors.app_white_color,
+                      innerColor: AppConstantsColors.appGreenColor,
+                      textColor: AppConstantsColors.appWhiteColor,
                       text: "Register")
                 ]),
                 SizedBox(
@@ -213,9 +212,9 @@ class SignUp extends StatelessWidget {
                         child: Text(
                           "Already have an account?",
                           style: TextStyle(
-                            color: App_Constants_Colors.app_black_color,
-                            fontSize: App_Fonts_Constants.text_font_size.sp,
-                            fontFamily: App_Fonts_Constants.Philosopher,
+                            color: AppConstantsColors.appBlackColor,
+                            fontSize: AppFontsConstants.textFontSize.sp,
+                            fontFamily: AppFontsConstants.philosopher,
                           ),
                         ),
                       ),
@@ -228,9 +227,9 @@ class SignUp extends StatelessWidget {
                             "Log In",
                             style: TextStyle(
                               decoration: TextDecoration.underline,
-                              color: App_Constants_Colors.app_black_color,
-                              fontSize: App_Fonts_Constants.text_font_size.sp,
-                              fontFamily: App_Fonts_Constants.Philosopher,
+                              color: AppConstantsColors.appBlackColor,
+                              fontSize: AppFontsConstants.textFontSize.sp,
+                              fontFamily: AppFontsConstants.philosopher,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

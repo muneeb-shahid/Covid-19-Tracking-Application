@@ -1,12 +1,13 @@
-import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&signupButton.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
 import 'package:covid_19_trackingapp/controller/create_blog_controller/create_blog_controller.dart';
-import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_drawer/reuseable_drawer.dart';
+import 'package:covid_19_trackingapp/view/home_view/home_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../reuseable_components/custom_button/login_and_signup_button.dart';
 
 class CreateBlog extends StatelessWidget {
   const CreateBlog({super.key});
@@ -18,15 +19,15 @@ class CreateBlog extends StatelessWidget {
         Get.put(CreateBlogController());
     return Scaffold(
       appBar: AppBar(
-        title: TextHeading(
-            "Create an article", App_Constants_Colors.app_white_color),
+        title: textHeading(
+            "Create an article", AppConstantsColors.appWhiteColor),
         elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),
         ),
-        backgroundColor: App_Constants_Colors.app_green_color,
+        backgroundColor: AppConstantsColors.appGreenColor,
         actions: [
           IconButton(
               onPressed: () {
@@ -36,7 +37,7 @@ class CreateBlog extends StatelessWidget {
               icon: Icon(Icons.login_outlined)),
         ],
       ),
-      drawer: ReUseable_Drawer(),
+      drawer: reUseableDrawer(),
       body: SafeArea(
           top: true,
           child: SingleChildScrollView(
@@ -86,14 +87,14 @@ class CreateBlog extends StatelessWidget {
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: App_Constants_Colors
-                                          .app_black_color)),
+                                      color: AppConstantsColors
+                                          .appBlackColor)),
                               hintText: 'Write a title of article...',
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5),
                                 borderSide: BorderSide(
                                   width: 2,
-                                  color: App_Constants_Colors.app_black_color,
+                                  color: AppConstantsColors.appBlackColor,
                                 ),
                               ),
                             )),
@@ -110,14 +111,14 @@ class CreateBlog extends StatelessWidget {
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: App_Constants_Colors
-                                          .app_black_color)),
+                                      color: AppConstantsColors
+                                          .appBlackColor)),
                               hintText: 'Write a article content...',
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5),
                                 borderSide: BorderSide(
                                   width: 2,
-                                  color: App_Constants_Colors.app_black_color,
+                                  color: AppConstantsColors.appBlackColor,
                                 ),
                               ),
                             )),
@@ -127,9 +128,9 @@ class CreateBlog extends StatelessWidget {
                   SizedBox(
                     height: screenHeight * 0.04,
                   ),
-                  customLogin_SignupButton(
-                      innerColor: App_Constants_Colors.app_green_color,
-                      textColor: App_Constants_Colors.app_white_color,
+                  customLoginSignupButton(
+                      innerColor: AppConstantsColors.appGreenColor,
+                      textColor: AppConstantsColors.appWhiteColor,
                       text: "Publish",
                       func: () => createBlogController.publish()),
                 ],

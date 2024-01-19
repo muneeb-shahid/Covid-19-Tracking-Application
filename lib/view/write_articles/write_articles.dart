@@ -1,8 +1,8 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
 import 'package:covid_19_trackingapp/reuseable_components/custom_button/custom_button.dart';
 import 'package:covid_19_trackingapp/reuseable_components/reuseable_drawer/reuseable_drawer.dart';
 import 'package:covid_19_trackingapp/reuseable_components/responsive_height_and_width/responsive.dart';
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/text_paragraph/text_paragraph.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
@@ -18,17 +18,17 @@ class WriteArticles extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextHeading(
-            "Write an Article", AppConstantsColors.app_white_color),
+        title:
+            textHeading("Write an Article", AppConstantsColors.appWhiteColor),
         elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),
         ),
-        backgroundColor: AppConstantsColors.app_green_color,
+        backgroundColor: AppConstantsColors.appGreenColor,
       ),
-      drawer: ReUseable_Drawer(),
+      drawer: reUseableDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(
@@ -53,39 +53,39 @@ class WriteArticles extends StatelessWidget {
                 TextSpan(
                   text: 'Article are ',
                   style: TextStyle(
-                      color: AppConstantsColors.app_black_color,
-                      fontSize: App_Fonts_Constants.heading_font_size.sp,
-                      fontFamily: App_Fonts_Constants.Philosopher,
+                      color: AppConstantsColors.appBlackColor,
+                      fontSize: AppFontsConstants.headingFontSize.sp,
+                      fontFamily: AppFontsConstants.philosopher,
                       wordSpacing: 1,
                       letterSpacing: 0.5),
                   children: <TextSpan>[
                     TextSpan(
                         text: 'published',
                         style: TextStyle(
-                            fontSize: App_Fonts_Constants.heading_font_size.sp,
+                            fontSize: AppFontsConstants.headingFontSize.sp,
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.normal,
                             decoration: TextDecoration.underline,
                             color: AppConstantsColors.appRedColor,
-                            fontFamily: App_Fonts_Constants.Philosopher)),
+                            fontFamily: AppFontsConstants.philosopher)),
                     TextSpan(
                       text: ' by only ',
                       style: TextStyle(
-                          color: AppConstantsColors.app_black_color,
-                          fontSize: App_Fonts_Constants.heading_font_size.sp,
-                          fontFamily: App_Fonts_Constants.Philosopher,
+                          color: AppConstantsColors.appBlackColor,
+                          fontSize: AppFontsConstants.headingFontSize.sp,
+                          fontFamily: AppFontsConstants.philosopher,
                           wordSpacing: 1,
                           letterSpacing: 0.5),
                     ),
                     TextSpan(
                         text: 'Authorized Person',
                         style: TextStyle(
-                            fontSize: App_Fonts_Constants.heading_font_size.sp,
+                            fontSize: AppFontsConstants.headingFontSize.sp,
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.normal,
                             decoration: TextDecoration.underline,
                             color: AppConstantsColors.appRedColor,
-                            fontFamily: App_Fonts_Constants.Philosopher)),
+                            fontFamily: AppFontsConstants.philosopher)),
                   ],
                 ),
                 textAlign: TextAlign.center,
@@ -110,8 +110,8 @@ class WriteArticles extends StatelessWidget {
               ),
               customButton(
                   nextscreen: const Login(),
-                  innerColor: AppConstantsColors.app_green_color,
-                  textColor: AppConstantsColors.app_white_color,
+                  innerColor: AppConstantsColors.appGreenColor,
+                  textColor: AppConstantsColors.appWhiteColor,
                   text: "Go to Login Page")
             ],
           ),

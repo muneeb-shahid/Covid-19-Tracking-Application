@@ -16,7 +16,7 @@ class BlogFullPost extends StatelessWidget {
   Widget build(BuildContext context) {
     var heightt = MediaQuery.of(context).size.height * 1;
     return Scaffold(
-      backgroundColor: App_Constants_Colors.app_background_color,
+      backgroundColor: AppConstantsColors.appBackgroundColor,
       appBar: AppBar(
         elevation: 0,
         shape: const RoundedRectangleBorder(
@@ -24,11 +24,11 @@ class BlogFullPost extends StatelessWidget {
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),
         ),
-        backgroundColor: App_Constants_Colors.app_green_color,
+        backgroundColor: AppConstantsColors.appGreenColor,
         leading: InkWell(
           child: Icon(
             Icons.arrow_back_ios_new,
-            color: App_Constants_Colors.app_white_color,
+            color: AppConstantsColors.appWhiteColor,
           ),
           onTap: () {
             Get.back();
@@ -61,8 +61,8 @@ class BlogFullPost extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     letterSpacing: 2,
                     wordSpacing: 2,
-                    color: App_Constants_Colors.app_black_color,
-                    fontFamily: App_Fonts_Constants.Philosopher,
+                    color: AppConstantsColors.appBlackColor,
+                    fontFamily: AppFontsConstants.philosopher,
                     fontSize: 16.sp),
               ),
               SizedBox(
@@ -74,9 +74,9 @@ class BlogFullPost extends StatelessWidget {
                   Text(
                     blogData['date'].toString(),
                     style: TextStyle(
-                        color: App_Constants_Colors.app_black_color,
-                        fontFamily: App_Fonts_Constants.Poppins,
-                        fontSize: App_Fonts_Constants.text_font_size.sp),
+                        color: AppConstantsColors.appBlackColor,
+                        fontFamily: AppFontsConstants.poppins,
+                        fontSize: AppFontsConstants.textFontSize.sp),
                   ),
                 ],
               ),
@@ -90,8 +90,8 @@ class BlogFullPost extends StatelessWidget {
                 style: TextStyle(
                     letterSpacing: 2,
                     wordSpacing: 2,
-                    color: App_Constants_Colors.app_black_color,
-                    fontFamily: App_Fonts_Constants.Poppins,
+                    color: AppConstantsColors.appBlackColor,
+                    fontFamily: AppFontsConstants.poppins,
                     fontSize: 13.sp),
               ),
             ],

@@ -1,11 +1,10 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
-
-import 'package:covid_19_trackingapp/constants/TextHeading/text_heading.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
 import 'package:covid_19_trackingapp/constants/text_paragraph/text_paragraph.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/controller/Onboarding_screen_controller/Onboarding_screen_controller.dart';
-import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
+import 'package:covid_19_trackingapp/view/home_view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +16,7 @@ class OnBoardingScreen extends StatelessWidget {
     OnBoardingScreenController onBoardingScreenController =
         Get.put(OnBoardingScreenController());
     return Scaffold(
-      backgroundColor: App_Constants_Colors.app_background_color,
+      backgroundColor: AppConstantsColors.appBackgroundColor,
       body: Stack(
         children: [
           Padding(
@@ -36,14 +35,14 @@ class OnBoardingScreen extends StatelessWidget {
                       height: screenHeight * 0.3,
                     ),
                     SizedBox(height: screenHeight * 0.1),
-                    TextHeading(
+                    textHeading(
                         onBoardingScreenController.onboardingData[index].title,
-                        App_Constants_Colors.app_black_color),
+                        AppConstantsColors.appBlackColor),
                     SizedBox(height: screenHeight * 0.05),
                     textParagraph(
                       onBoardingScreenController
                           .onboardingData[index].description,
-                      App_Constants_Colors.app_black_color,
+                      AppConstantsColors.appBlackColor,
                     ),
                   ],
                 );
@@ -72,12 +71,12 @@ class OnBoardingScreen extends StatelessWidget {
                                 width: screenWidth * 0.50,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  color: App_Constants_Colors.appGreenColor,
+                                  color: AppConstantsColors.appGreenColor,
                                 ),
                                 child: Center(
-                                  child: TextHeading(
+                                  child: textHeading(
                                     'Get Started',
-                                    App_Constants_Colors.app_white_color,
+                                    AppConstantsColors.appWhiteColor,
                                   ),
                                 )),
                           ),
@@ -106,7 +105,7 @@ class OnBoardingScreen extends StatelessWidget {
                                 color: (onBoardingScreenController
                                             .selectedPageIndex ==
                                         index)
-                                    ? App_Constants_Colors.appGreenColor
+                                    ? AppConstantsColors.appGreenColor
                                     : Colors.grey,
                               ),
                             );

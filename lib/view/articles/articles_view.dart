@@ -1,15 +1,15 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/CustomButton/Login&signupButton.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
 import 'package:covid_19_trackingapp/constants/fonts_size_constant/fonts_size_constant.dart';
-import 'package:covid_19_trackingapp/view/BlogFullPost/BlogFullPost.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_drawer/reuseable_drawer.dart';
+import 'package:covid_19_trackingapp/view/blog_full_post/blog_full_post.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import '../../constants/TextHeading/text_heading.dart';
 
 class ArticlesView extends StatelessWidget {
   const ArticlesView({super.key});
@@ -19,18 +19,18 @@ class ArticlesView extends StatelessWidget {
     final ref = FirebaseDatabase.instance.ref("Article");
 
     return Scaffold(
-      backgroundColor: App_Constants_Colors.app_background_color,
+      backgroundColor: AppConstantsColors.appBackgroundColor,
       appBar: AppBar(
-        title: TextHeading("Articles", App_Constants_Colors.app_white_color),
+        title: textHeading("Articles", AppConstantsColors.appWhiteColor),
         elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),
         ),
-        backgroundColor: App_Constants_Colors.appGreenColor,
+        backgroundColor: AppConstantsColors.appGreenColor,
       ),
-      drawer: ReUseable_Drawer(),
+      drawer: reUseableDrawer(),
       body: Padding(
         padding: EdgeInsets.only(
           left: screenWidth * 0.02,
@@ -60,7 +60,7 @@ class ArticlesView extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: Card(
-                            color: App_Constants_Colors.appWhiteColor70,
+                            color: AppConstantsColors.appWhiteColor70,
                             child: Column(
                               children: [
                                 Image.network(
@@ -89,10 +89,10 @@ class ArticlesView extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                             letterSpacing: 2,
                                             wordSpacing: 2,
-                                            color: App_Constants_Colors
-                                                .app_black_color,
+                                            color: AppConstantsColors
+                                                .appBlackColor,
                                             fontFamily:
-                                                App_Fonts_Constants.Philosopher,
+                                                AppFontsConstants.philosopher,
                                             fontSize: 16.sp),
                                       ),
                                       SizedBox(
@@ -105,12 +105,12 @@ class ArticlesView extends StatelessWidget {
                                           Text(
                                             list[index]['date'].toString(),
                                             style: TextStyle(
-                                                color: App_Constants_Colors
-                                                    .app_black_color,
+                                                color: AppConstantsColors
+                                                    .appBlackColor,
                                                 fontFamily:
-                                                    App_Fonts_Constants.Inter,
-                                                fontSize: App_Fonts_Constants
-                                                    .text_font_size.sp),
+                                                    AppFontsConstants.inter,
+                                                fontSize: AppFontsConstants
+                                                    .textFontSize.sp),
                                           ),
                                         ],
                                       ),
@@ -124,20 +124,20 @@ class ArticlesView extends StatelessWidget {
                                         softWrap: true,
                                         maxLines: 3,
                                         style: TextStyle(
-                                            color: App_Constants_Colors
-                                                .app_black_color,
+                                            color: AppConstantsColors
+                                                .appWhiteColor,
                                             fontFamily:
-                                                App_Fonts_Constants.Poppins,
+                                                AppFontsConstants.poppins,
                                             fontSize: 13.sp),
                                       ),
                                       SizedBox(
                                         height: screenHeight * 0.03,
                                       ),
-                                      customLogin_SignupButton(
-                                          innerColor: App_Constants_Colors
+                                      customLoginSignupButton(
+                                          innerColor: AppConstantsColors
                                               .appGreenColor,
-                                          textColor: App_Constants_Colors
-                                              .app_white_color,
+                                          textColor: AppConstantsColors
+                                              .appWhiteColor,
                                           text: "Read more",
                                           func: () => Get.to(BlogFullPost(
                                                 blogData: list[index],

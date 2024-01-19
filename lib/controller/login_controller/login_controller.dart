@@ -1,5 +1,5 @@
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
-import 'package:covid_19_trackingapp/view/CreateBlog/CreateBlog.dart';
+import 'package:covid_19_trackingapp/view/create_blog/create_blog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

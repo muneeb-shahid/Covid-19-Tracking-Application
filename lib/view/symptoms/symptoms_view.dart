@@ -1,10 +1,9 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReuseableHelpSymtomps/ReuseableHelpSymtomps.dart';
 import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_drawer/reuseable_drawer.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_help_symtomps/reuseable_help_symtomps.dart';
 import 'package:flutter/material.dart';
-
-import '../../Reuseable Components/Responsive_Height,Width/responsive.dart';
 import '../../constants/colors_constants/colors_constants.dart';
 
 class SymptomsView extends StatelessWidget {
@@ -14,16 +13,16 @@ class SymptomsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: textHeading("Symptoms", App_Constants_Colors.app_white_color),
+        title: textHeading("Symptoms", AppConstantsColors.appWhiteColor),
         elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),
         ),
-        backgroundColor: App_Constants_Colors.app_green_color,
+        backgroundColor: AppConstantsColors.appGreenColor,
       ),
-      drawer: ReUseable_Drawer(),
+      drawer: reUseableDrawer(),
       body: Padding(
         padding: EdgeInsets.only(
           left: screenWidth * 0.05,
@@ -43,16 +42,16 @@ class SymptomsView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ReuseableHelpSymtomps(App_Images.fever, "Sneezing"),
-                  ReuseableHelpSymtomps(App_Images.DryCough, "Dry Cough"),
+                  reuseableHelpSymtomps(App_Images.fever, "Sneezing"),
+                  reuseableHelpSymtomps(App_Images.DryCough, "Dry Cough"),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ReuseableHelpSymtomps(App_Images.Sneezing, "Fever"),
-                  ReuseableHelpSymtomps(App_Images.vomit, "Vomit"),
+                  reuseableHelpSymtomps(App_Images.Sneezing, "Fever"),
+                  reuseableHelpSymtomps(App_Images.vomit, "Vomit"),
                 ],
               )
             ],

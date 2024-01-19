@@ -1,10 +1,10 @@
 import 'package:covid_19_trackingapp/controller/my_app_controller/my_app_controller.dart';
 import 'package:covid_19_trackingapp/dependency_injection.dart';
 import 'package:covid_19_trackingapp/routes/approutes.dart';
-import 'package:covid_19_trackingapp/view/Articles/ArticlesView.dart';
-import 'package:covid_19_trackingapp/view/CreateBlog/CreateBlog.dart';
-import 'package:covid_19_trackingapp/view/HomeView/HomeView.dart';
-import 'package:covid_19_trackingapp/view/OnBoardingScreen/OnBoardingScreen.dart';
+import 'package:covid_19_trackingapp/view/articles/articles_view.dart';
+import 'package:covid_19_trackingapp/view/create_blog/create_blog.dart';
+import 'package:covid_19_trackingapp/view/home_view/home_view.dart';
+import 'package:covid_19_trackingapp/view/onboarding_screen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

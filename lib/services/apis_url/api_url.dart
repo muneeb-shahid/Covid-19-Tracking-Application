@@ -1,4 +1,4 @@
-class API_URL {
+class APIURL {
   // BASEURL
   static const String baseURL = "https://disease.sh/v3/covid-19/";
 

@@ -1,10 +1,10 @@
 import 'package:covid_19_trackingapp/Images/images.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReUseable%20Drawer/ReUseableDrawer.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/Responsive_Height,Width/responsive.dart';
-import 'package:covid_19_trackingapp/Reuseable%20Components/ReuseableHelpCard/ReuseableHelpCard.dart';
 import 'package:covid_19_trackingapp/constants/colors_constants/colors_constants.dart';
+import 'package:covid_19_trackingapp/constants/text_heading/text_heading.dart';
+import 'package:covid_19_trackingapp/reuseable_components/custom_button/login_and_signup_button.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_drawer/reuseable_drawer.dart';
+import 'package:covid_19_trackingapp/reuseable_components/reuseable_help_card/reuseable_help_card.dart';
 import 'package:flutter/material.dart';
-import '../../constants/TextHeading/text_heading.dart';
 
 class HelpView extends StatelessWidget {
   const HelpView({super.key});
@@ -13,16 +13,16 @@ class HelpView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextHeading("Help", App_Constants_Colors.app_white_color),
+        title: textHeading("Help", AppConstantsColors.appWhiteColor),
         elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),
         ),
-        backgroundColor: App_Constants_Colors.app_green_color,
+        backgroundColor: AppConstantsColors.appGreenColor,
       ),
-      drawer: ReUseable_Drawer(),
+      drawer: reUseableDrawer(),
       body: Padding(
         padding: EdgeInsets.only(left: screenWidth*0.05,right:  screenWidth*0.05,),
         child: SingleChildScrollView(
